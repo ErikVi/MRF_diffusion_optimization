@@ -11,9 +11,9 @@ Codes used for the purpose of the generation of results for the MSc project titl
   - Saves optimized FA and PM sequences, their plots, and simulated signal outputs across diffusion values.
   - Produces comparative visualizations of initial vs. optimized nCRLBs both per-parameter and averaged across parameters.
 Results are organized into directories for reproducibility and downstream analysis, with all figures and NumPy arrays saved for later inspection.
-- UNDERSAMPLING.py: This code generates simulated diffusion MRI phantom images with varying T1, T2, fractional anisotropy (FA), and mean diffusivity (MD) values. It constructs a dictionary of simulated signals for combinations of relaxation and diffusion parameters, and then generates checkerboard-style phantoms. The code also applies phase modulation, undersampling in k-space (spiral trajectories), and optional noise to the simulated signals.
+- UNDERSAMPLING.py: This code generates simulated diffusion MRI phantom images with varying T1, T2, fractional anisotropy (FA), and mean diffusivity (MD) values. It constructs a dictionary of simulated signals for combinations of relaxation and diffusion parameters, and then generates checkerboard-style phantoms. The code also applies phase modulation, undersampling in k-space (spiral trajectories), and optional noise to the simulated signals. The workflow uses JAX for fast numerical computation, SigPy for NUFFT operations, and custom modules for Bloch/EPG simulations and phase modulation.
 Output includes:
   - FA and MD maps of the phantom
   - Relaxation parameter images
   - Undersampled k-space data
-The workflow uses JAX for fast numerical computation, SigPy for NUFFT operations, and custom modules for Bloch/EPG simulations and phase modulation.
+
