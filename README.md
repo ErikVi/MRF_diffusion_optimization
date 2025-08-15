@@ -16,5 +16,4 @@ Output includes:
   - FA and MD maps of the phantom
   - Relaxation parameter images
   - Undersampled k-space data
-
 The workflow uses JAX for fast numerical computation, SigPy for NUFFT operations, and custom modules for Bloch/EPG simulations and phase modulation.
