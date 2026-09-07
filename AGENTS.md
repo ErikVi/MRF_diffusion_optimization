@@ -2,553 +2,850 @@
 
 ## Project
 
-This repository contains the code for my MSc research project:
+This repository contains the research code for the MSc thesis:
 
-"On the robust optimization of diffusion-enhanced MRF sequences through flip angle and phase train design with comparative phase modulation strategies."
+"On the optimization of diffusion-enhanced Magnetic Resonance Fingerprinting sequences through flip angle and phase train design with comparative phase modulation strategies."
 
-The project concerns Magnetic Resonance Fingerprinting (MRF), diffusion-weighted MRI, Extended Phase Graph (EPG) simulations, flip-angle and phase-train optimization, and comparison of phase-modulation strategies.
+The project implements MRI simulations and sequence optimization using:
 
-This is scientific research code. Treat physical and mathematical correctness as more important than superficial code cleanliness.
+* Extended Phase Graph (EPG) simulation
+* RF pulse and phase evolution
+* T1/T2 relaxation
+* Gradient dephasing
+* Diffusion attenuation
+* Diffusion tensor modelling
+* Magnetic Resonance Fingerprinting (MRF)
+* B-spline sequence parameterization
+* JAX automatic differentiation
+* Fisher Information Matrices
+* Cramér-Rao Lower Bounds
+* Constrained optimization
+* Diffusion tensor metrics
+* Phase modulation strategies
+* Simulated phantom and undersampling experiments
 
-The repository is based on published MRI literature and physical principles. When modifying scientific code, preserve the intended physical model unless there is strong evidence that the existing implementation is incorrect.
+This is scientific research software.
 
----
-
-## Primary objective
-
-Continuously improve this repository.
-
-When asked to improve, refactor, review, or optimize the code:
-
-1. First understand the entire repository.
-2. Identify the scientific purpose of each major component.
-3. Trace the flow of data through the simulation.
-4. Identify assumptions, approximations, hard-coded values, duplicated logic, fragile code, and unclear interfaces.
-5. Check the implementation against the relevant physical and mathematical principles.
-6. Improve the code incrementally.
-7. Add or improve tests where possible.
-8. Verify that changes do not unintentionally change the scientific results.
-9. Explain important scientific or numerical changes.
-
-Do not perform large refactors simply because they look aesthetically better.
+Scientific correctness, reproducibility, and clarity of the physical model are more important than preserving the current implementation or file structure.
 
 ---
 
-## Scientific correctness comes first
+# Core objective
 
-The code implements MRI physics and numerical simulations.
+Transform this repository into a scientifically rigorous, well-structured, readable, maintainable, reproducible research codebase.
+
+The existing repository should be treated as legacy research code.
+
+Do not assume that its current structure is good.
+
+You are explicitly allowed to:
+
+* Create files.
+* Create directories.
+* Move files.
+* Rename files.
+* Rename functions.
+* Rename classes.
+* Rename variables.
+* Split large modules.
+* Combine genuinely related modules.
+* Remove dead code.
+* Replace duplicated implementations.
+* Improve APIs.
+* Add tests.
+* Add documentation.
+* Create configuration files.
+* Create package structure.
+
+However, every substantial scientific change must be validated.
+
+---
+
+# Scientific priority
+
+Use this priority order:
+
+1. Scientific correctness.
+2. Numerical correctness and stability.
+3. Reproducibility.
+4. Scientific clarity.
+5. Testability.
+6. Architecture.
+7. Maintainability.
+8. Performance.
+9. Style.
+
+Never sacrifice scientific correctness for cleaner code.
+
+Never change a physical convention simply because another convention is more convenient.
+
+Never silently change scientific behaviour.
+
+---
+
+# Repository organization
+
+The final repository should have a clear scientific architecture.
+
+A possible target structure is:
+
+```text
+project/
+│
+├── src/
+│   └── mrf_diffusion/
+│       ├── epg/
+│       │   ├── states.py
+│       │   ├── rf.py
+│       │   ├── gradients.py
+│       │   ├── relaxation.py
+│       │   └── diffusion.py
+│       │
+│       ├── sequence/
+│       │   ├── definition.py
+│       │   ├── phase_modulation.py
+│       │   └── bspline.py
+│       │
+│       ├── information/
+│       │   ├── jacobian.py
+│       │   ├── fisher.py
+│       │   └── crlb.py
+│       │
+│       ├── diffusion/
+│       │   └── tensor.py
+│       │
+│       ├── optimization/
+│       │   ├── objectives.py
+│       │   ├── constraints.py
+│       │   └── optimizer.py
+│       │
+│       └── simulation/
+│           └── signal.py
+│
+├── experiments/
+│   ├── optimization/
+│   ├── phase_comparison/
+│   ├── bspline_benchmarks/
+│   └── undersampling/
+│
+├── tests/
+│   ├── epg/
+│   ├── diffusion/
+│   ├── sequence/
+│   ├── information/
+│   └── integration/
+│
+├── docs/
+│   ├── scientific_model.md
+│   ├── conventions.md
+│   ├── units.md
+│   ├── architecture.md
+│   ├── validation.md
+│   └── literature.md
+│
+├── data/
+│   ├── input/
+│   └── output/
+│
+├── README.md
+├── pyproject.toml
+└── AGENTS.md
+```
+
+This is an example target, not a requirement to reproduce this exact structure.
+
+Choose the structure that best represents the actual scientific dependencies discovered in the repository.
+
+Do not reorganize files merely to match this example.
+
+---
+
+# Scientific architecture
+
+Separate the repository into distinct conceptual layers.
+
+## Physics
+
+Contains implementations of physical models.
+
+Examples:
+
+* EPG state evolution.
+* RF rotations.
+* Gradient operators.
+* Relaxation.
+* Diffusion.
+* Diffusion tensors.
+
+Physics modules must not depend on experiment-specific scripts.
+
+## Sequence definition
+
+Contains:
+
+* Flip angle trains.
+* Phase trains.
+* TR.
+* TE.
+* Gradient waveforms.
+* Diffusion encoding.
+* B-spline parameterizations.
+* Phase modulation strategies.
+
+Sequence definitions should be explicit data or objects.
+
+They should not be hidden inside simulation functions.
+
+## Simulation
+
+Contains the actual signal simulation.
+
+A simulator should receive a clearly defined physical and sequence configuration.
+
+It should not contain experiment-specific optimization logic.
+
+## Information theory
+
+Contains:
+
+* Jacobians.
+* Fisher Information Matrices.
+* CRLB calculations.
+* Noise models.
+* Parameter ordering.
+
+## Optimization
+
+Contains:
+
+* Objectives.
+* Constraints.
+* Parameterizations.
+* Optimizer configuration.
+* Optimization execution.
+
+Optimization code should call reusable simulation and information-theory code.
+
+The physics layer must not know that optimization exists.
+
+## Experiments
+
+Contains scripts that reproduce specific MSc experiments.
+
+Experiment scripts may combine the reusable modules.
+
+They should contain experiment-specific choices.
+
+Do not put experiment-specific assumptions into reusable physics modules.
+
+---
+
+# Naming
+
+Names must make scientific meaning obvious.
+
+Prefer:
+
+```python
+simulate_epg()
+apply_rf_rotation()
+apply_gradient_shift()
+apply_relaxation()
+apply_diffusion()
+simulate_mrf_signal()
+calculate_fisher_information()
+calculate_crlb()
+generate_phase_train()
+generate_flip_angle_train()
+```
+
+over vague names such as:
+
+```python
+epg()
+rf()
+grad()
+relax()
+diff()
+calc()
+run()
+```
+
+Use established MRI terminology where appropriate.
+
+Do not replace standard terminology merely to make names longer.
+
+Prefer explicit names when abbreviations create ambiguity.
+
+Examples:
+
+```python
+flip_angle_train
+phase_train
+diffusion_tensor
+repetition_time
+echo_time
+t1
+t2
+magnetization
+gradient_direction
+diffusion_coefficient
+epg_states
+```
+
+Avoid ambiguous names such as:
+
+```python
+fa
+ph
+D
+dt
+x
+arr
+tmp
+res
+```
+
+unless their meaning is genuinely obvious from the immediate context.
+
+Do not use `FA` for both flip angle and fractional anisotropy.
+
+This project contains both concepts.
+
+Use names such as:
+
+```python
+flip_angle
+flip_angle_train
+fractional_anisotropy
+```
+
+---
+
+# File naming
+
+File names should describe the scientific responsibility of the module.
+
+Prefer:
+
+```text
+rf.py
+relaxation.py
+diffusion.py
+gradients.py
+phase_modulation.py
+bspline.py
+fisher.py
+crlb.py
+```
+
+Avoid files whose names describe implementation history rather than purpose.
+
+For example, names such as:
+
+```text
+BESTMETHOD.py
+BSPLINEPROFILER.py
+EPG_blocks_jaxcode.py
+```
+
+should be replaced when their responsibilities become clear.
+
+Experiment names can remain descriptive where appropriate.
+
+---
+
+# Function design
+
+Each function should have one clear scientific or computational responsibility.
+
+A function should ideally answer:
+
+"What physical or mathematical operation does this function perform?"
+
+Avoid functions that simultaneously:
+
+* Generate sequences.
+* Simulate EPG.
+* Calculate CRLBs.
+* Optimize parameters.
+* Save files.
+* Generate plots.
+
+Split such workflows into separate functions.
+
+Functions implementing scientific equations should be easy to inspect.
+
+Avoid unnecessary abstraction that hides the underlying physics.
+
+---
+
+# Documentation
+
+Important scientific functions must document:
+
+* Purpose.
+* Inputs.
+* Outputs.
+* Units.
+* Array shapes.
+* Important conventions.
+* Physical assumptions.
+* Relevant literature when appropriate.
+
+For example:
+
+```python
+def apply_relaxation(
+    epg_states,
+    duration_ms,
+    t1_ms,
+    t2_ms,
+):
+    """Apply T1/T2 relaxation to EPG states.
+
+    Parameters
+    ----------
+    epg_states:
+        EPG state array with shape (...).
+    duration_ms:
+        Evolution time in milliseconds.
+    t1_ms:
+        Longitudinal relaxation time in milliseconds.
+    t2_ms:
+        Transverse relaxation time in milliseconds.
+    """
+```
+
+Scientific documentation should explain the model, not merely restate the code.
+
+---
+
+# Units
+
+Make physical units explicit.
 
 Pay particular attention to:
 
-* Bloch-equation consistency.
-* Extended Phase Graph (EPG) formalism.
-* EPG state transitions.
-* Longitudinal and transverse magnetization.
-* RF rotations.
-* Flip-angle conventions.
-* RF phase conventions.
-* Phase cycling and phase modulation.
-* Gradient-induced dephasing.
-* Diffusion attenuation.
-* T1 and T2 relaxation.
-* Echo formation.
-* Spoiling assumptions.
-* Signal evolution.
-* MRF dictionary generation.
-* Fingerprint construction.
-* Optimization objectives.
-* Numerical precision and stability.
+* T1.
+* T2.
+* TE.
+* TR.
+* Diffusion coefficient.
+* Diffusion tensor.
+* Gradient strength.
+* Gradient duration.
+* Gradient separation.
+* b-value.
+* Flip angle.
+* RF phase.
 
-Never change a physical convention merely to make the implementation more convenient.
+Do not rely on undocumented assumptions such as "this function expects milliseconds".
 
-If a convention is ambiguous, determine how the existing implementation uses it and document it before changing it.
+Where useful, include units in variable names:
 
----
+```python
+echo_time_ms
+repetition_time_ms
+diffusion_coefficient_mm2_per_s
+```
 
-## Literature and physical principles
-
-Treat published literature as a source of truth for the intended physical model.
-
-When a scientific implementation appears questionable:
-
-1. Identify the relevant equation or physical principle.
-2. Locate the corresponding implementation.
-3. Determine whether the code actually implements the equation correctly.
-4. Check units, signs, indexing, rotations, state ordering, and conventions.
-5. Only then modify the implementation.
-
-Do not "correct" something based solely on intuition.
-
-If external literature is needed, search for the original paper or another authoritative source.
-
-Prefer primary research papers, textbooks, and established MRI references over blogs or informal explanations.
-
-When a change depends on a paper, record the relevant citation and explain what part of the implementation it supports.
+Do not blindly add units to every variable if the surrounding API already makes them unambiguous.
 
 ---
 
-## EPG implementation
+# MRI conventions
 
-Treat the EPG implementation as a core scientific component.
+Explicitly document and preserve:
 
-Explicitly verify:
+* EPG state ordering.
+* F+ convention.
+* F- convention.
+* Z convention.
+* RF rotation convention.
+* RF phase convention.
+* Gradient direction convention.
+* Complex signal convention.
+* Flip angle convention.
+* Phase units.
+* Diffusion convention.
+
+Never change these silently.
+
+If a convention is ambiguous, investigate the existing implementation, thesis, and relevant literature before modifying it.
+
+---
+
+# EPG
+
+The EPG implementation is scientifically critical.
+
+Verify:
 
 * State representation.
-* F+, F-, and Z states.
-* RF rotation matrices.
-* RF phase handling.
-* Gradient dephasing.
-* State shifting.
-* Conjugate relationships.
+* State ordering.
+* F+.
+* F-.
+* Z.
+* Zero-order behaviour.
+* RF rotations.
+* Gradient shifts.
 * Relaxation.
+* Diffusion.
+* Initial conditions.
+* Signal extraction.
+* Number of retained EPG states.
+
+Do not refactor the EPG implementation substantially before creating characterization tests.
+
+---
+
+# Diffusion
+
+Verify the complete derivation and implementation of:
+
+* Scalar diffusion.
+* Tensor diffusion.
+* Gradient-direction dependence.
 * Diffusion attenuation.
-* Initial conditions.
-* Echo/readout state.
-* Number and indexing of EPG states.
-* Treatment of higher-order states.
-* Numerical truncation.
+* EPG-order dependence.
+* Diffusion tensor symmetry.
+* Tensor positive semidefiniteness.
+* MD.
+* FA.
 
-Check whether the implementation preserves expected physical symmetries and limiting cases.
+Check all units.
 
-Where practical, create tests for analytically known or physically obvious cases.
+Compare implementation against the MSc thesis and relevant literature.
 
-Examples include:
-
-* Zero flip angle.
-* Zero diffusion.
-* Zero gradient.
-* No relaxation.
-* Very long T1/T2.
-* Single RF pulse.
-* Constant flip-angle train.
-* Known spin-echo behaviour.
-* Known spoiled-gradient behaviour.
-* Comparison against an independent implementation where possible.
+Do not "correct" the implementation based solely on generic MRI knowledge.
 
 ---
 
-## MRI conventions
+# JAX
 
-Make conventions explicit.
+JAX is a core dependency.
 
-Do not leave important scientific conventions hidden in arbitrary code.
+Preserve:
 
-Examples include:
+* JIT compilation.
+* Automatic differentiation.
+* Vectorization.
+* JAX-compatible numerical operations.
+* Required static arguments.
+* Correct dtypes.
 
-* Degrees vs radians.
-* Seconds vs milliseconds.
-* Hz vs rad/s.
-* Tesla.
-* Diffusion coefficient units.
-* Gradient units.
-* Gyromagnetic ratio.
-* RF phase convention.
-* Flip-angle convention.
-* Complex signal convention.
-* EPG state ordering.
-* Echo-time definition.
-* Repetition-time definition.
+Before changing a function, determine whether it is used inside:
 
-If a quantity has a unit, make that unit clear in its variable name, documentation, validation, or API.
+```python
+jax.jit
+jax.jacobian
+jax.grad
+jax.vmap
+```
 
-Prefer names such as:
+Do not introduce ordinary NumPy/SciPy operations into differentiable JAX paths without verifying compatibility.
 
-`T1_ms`
-
-over ambiguous names such as:
-
-`T1`
-
-when the distinction matters.
+Test gradients after refactoring.
 
 ---
 
-## Remove hard-coded assumptions
+# Numerical precision
 
-One of the main goals of this project is to make the implementation as general and configurable as reasonably possible.
+The repository uses JAX x64.
 
-Search systematically for:
+Investigate every explicit dtype conversion.
 
-* Hard-coded physical constants.
-* Hard-coded tissue parameters.
-* Hard-coded sequence parameters.
-* Hard-coded flip-angle trains.
-* Hard-coded phase trains.
-* Hard-coded diffusion coefficients.
-* Hard-coded T1/T2 values.
-* Hard-coded number of TRs.
-* Hard-coded EPG state counts.
-* Hard-coded optimization bounds.
-* Hard-coded sampling intervals.
-* Magic numbers.
-* Hard-coded file paths.
-* Hard-coded array dimensions.
-* Hard-coded optimization settings.
-* Duplicated parameter definitions.
+In particular, check for accidental float32 or complex64 conversion.
 
-Replace hard-coded values with explicit parameters or configuration objects when appropriate.
+Do not change precision merely for consistency.
 
-Do not blindly turn every number into a parameter.
+Determine whether precision affects:
 
-A constant that is genuinely fundamental to the algorithm may remain internal if making it configurable would make the code worse.
-
-The goal is meaningful configurability, not configuration for its own sake.
+* EPG simulation.
+* Jacobians.
+* FIM conditioning.
+* CRLB values.
+* Optimization convergence.
 
 ---
 
-## Separate physics from experiment configuration
+# Hard-coded values
 
-Where appropriate, separate:
+Systematically identify:
 
-1. Physical models.
-2. Sequence definitions.
-3. Simulation parameters.
-4. Optimization parameters.
-5. Data processing.
-6. Visualization.
-7. Experiment-specific configuration.
+* Physical constants.
+* Tissue parameters.
+* Sequence parameters.
+* Optimization parameters.
+* Plotting parameters.
+* File paths.
+* Array dimensions.
+* Number of EPG states.
+* Sequence lengths.
+* B-spline parameters.
+* Phase modulation parameters.
 
-For example, an EPG simulator should ideally not need to know which particular optimization experiment is being performed.
+Move experiment-specific parameters into explicit configuration.
 
-A sequence definition should ideally be capable of being passed into the simulator rather than being embedded inside the simulator.
+Do not turn every constant into configuration.
 
-Optimization code should operate on clearly defined parameters rather than reaching into simulation internals.
+Fundamental mathematical constants can remain constants.
 
 ---
 
-## Reproducibility
+# Reproducibility
 
-Scientific results must be reproducible.
-
-Make sure simulations and optimization runs have clearly defined:
-
-* Input parameters.
-* Random seeds where randomness exists.
-* Optimization settings.
-* Initial conditions.
-* Numerical tolerances.
-* Parameter ranges.
-* Output locations.
-* Software dependencies.
+Experiments should be reproducible from explicit configuration.
 
 Avoid hidden global state.
 
-Avoid dependence on the current working directory where practical.
+Avoid current-working-directory assumptions.
 
-Avoid implicit configuration.
+Avoid machine-specific paths.
 
-If a result depends on a parameter, make that dependency explicit.
+Record important:
 
----
+* Sequence parameters.
+* Tissue parameters.
+* Optimization parameters.
+* Random seeds.
+* Numerical tolerances.
+* Software versions.
 
-## Code architecture
-
-Prefer small functions with one clear responsibility.
-
-Prefer explicit data flow over global variables.
-
-Prefer meaningful names over abbreviated names.
-
-Prefer reusable scientific functions over duplicated implementations.
-
-Avoid unnecessary abstraction.
-
-Do not introduce elaborate class hierarchies unless they clearly improve the scientific model or maintainability.
-
-Keep numerical kernels easy to inspect.
-
-A researcher should be able to open a function and understand which physical operation it performs.
+Do not introduce complex experiment tracking unless necessary.
 
 ---
 
-## Numerical correctness
+# Tests
 
-When modifying numerical code, check:
+Build tests around scientific invariants.
 
-* Array shapes.
-* Broadcasting.
-* Complex-valued calculations.
-* Floating-point precision.
-* Numerical stability.
-* Boundary conditions.
-* Indexing.
-* Vectorization.
-* Memory usage.
-* Convergence.
-* Optimization tolerances.
+Prioritize:
 
-Do not replace a clear implementation with a faster implementation unless the new implementation can be verified to produce equivalent results within an appropriate numerical tolerance.
+1. EPG initialization.
+2. RF rotation.
+3. Gradient shifts.
+4. Relaxation.
+5. Zero-diffusion behaviour.
+6. Scalar diffusion.
+7. Tensor diffusion.
+8. MD.
+9. FA.
+10. B-spline evaluation.
+11. Jacobians.
+12. Fisher Information.
+13. CRLB.
+14. Complete small MRF simulation.
+15. Small optimization regression case.
 
-For performance improvements, benchmark before and after when practical.
-
-Scientific correctness takes priority over speed.
-
----
-
-## Testing philosophy
-
-Tests should verify scientific behaviour, not only whether functions execute.
-
-Prefer tests that answer questions such as:
-
-* Does the simulator obey the expected physical behaviour?
-* Does changing diffusion coefficient affect signal evolution correctly?
-* Does changing T1/T2 produce the expected relaxation behaviour?
-* Does RF phase produce the expected EPG state evolution?
-* Does the implementation converge appropriately with increasing EPG state count?
-* Does a simplified case reproduce a known analytical or literature result?
-* Does refactoring preserve previous results?
-
-When possible, use independent calculations or analytical limiting cases as references.
-
-For optimization code, test the objective function independently from the optimizer.
+Tests should verify scientific behaviour, not merely whether functions execute.
 
 ---
 
-## Regression protection
+# Regression testing
 
-Before making substantial changes, identify important existing outputs or reference results.
+Before substantial changes:
 
-When possible:
-
-1. Run the existing implementation.
-2. Save representative outputs.
-3. Make the change.
-4. Run the same case again.
-5. Compare the results.
-
-If results change, determine whether the change is:
-
-* An intended scientific correction.
-* A numerical difference.
-* A refactoring error.
-* A previously hidden bug.
+1. Establish representative reference cases.
+2. Record outputs.
+3. Make one conceptual change.
+4. Re-run the reference cases.
+5. Compare results.
+6. Explain any difference.
 
 Never silently accept changed scientific results.
 
----
+A changed result must be classified as:
 
-## Refactoring policy
+* Intended scientific correction.
+* Numerical difference.
+* Refactoring error.
+* Previously hidden bug.
+* Unknown.
 
-Refactor in small, understandable steps.
-
-Before a major refactor:
-
-* Understand the existing behaviour.
-* Identify dependencies.
-* Identify important outputs.
-* Add tests where necessary.
-* Make one conceptual change at a time.
-
-Do not combine a major architectural refactor with an unrelated scientific modification unless necessary.
-
-Preserve behaviour first. Improve architecture second.
+If unknown, investigate before proceeding.
 
 ---
 
-## Performance
+# Refactoring
 
-Performance matters because MRI simulations and optimization can involve many repeated simulations.
+The existing repository structure is not sacred.
 
-Look for:
-
-* Unnecessary Python loops.
-* Repeated calculations.
-* Repeated allocation of large arrays.
-* Unnecessary copies.
-* Inefficient optimization objectives.
-* Redundant simulation work.
-* Opportunities for vectorization.
-* Opportunities to cache calculations.
+You are encouraged to restructure it.
 
 However:
 
-Do not optimize prematurely.
+* Refactor in coherent stages.
+* Keep scientific behaviour stable during pure refactors.
+* Update imports.
+* Update documentation.
+* Update tests.
+* Remove obsolete files only after confirming they are obsolete.
+* Do not combine unrelated scientific changes with large structural changes.
 
-Do not sacrifice readability or physical transparency for small performance gains.
-
-Measure performance before making major performance-driven changes.
-
----
-
-## Scientific documentation
-
-Important scientific functions should explain:
-
-* What physical process they represent.
-* What the inputs mean.
-* Their units.
-* What convention they use.
-* What they return.
-* Important assumptions.
-* Relevant literature where appropriate.
-
-Use equations in documentation when they clarify the implementation.
-
-For example, if a function implements an EPG transition, document the mathematical operation rather than merely saying "updates the EPG state."
+Prefer several understandable changes over one enormous rewrite.
 
 ---
 
-## Visualization
+# Dead and duplicate code
 
-Plots are part of scientific validation.
+Look for:
 
-When improving plotting code:
+* Duplicate functions.
+* Commented-out implementations.
+* Legacy implementations.
+* Duplicate parameter definitions.
+* Unused imports.
+* Unused variables.
+* Unreachable code.
 
-* Label physical quantities clearly.
-* Include units.
-* Use scientifically meaningful axes.
-* Avoid misleading normalization.
-* Make assumptions explicit.
-* Keep plotting separate from simulation logic.
-* Make plots reproducible from stored results where practical.
+Do not delete scientifically meaningful legacy implementations until you understand why they exist.
 
-Do not alter scientific data merely to make a plot look better.
-
----
-
-## File and data handling
-
-Avoid hard-coded absolute paths.
-
-Use repository-relative paths or explicit configuration.
-
-Do not commit:
-
-* Large generated datasets unless intentionally part of the project.
-* Temporary files.
-* Machine-specific paths.
-* Credentials.
-* API keys.
-* Personal information.
-
-Do not delete existing research data unless explicitly instructed.
+If useful, preserve them in documentation or version history rather than active production code.
 
 ---
 
-## Git discipline
+# Performance
 
-Before modifying substantial code:
+Performance matters because optimization repeatedly evaluates simulations.
 
-* Inspect the current Git state.
-* Understand recent changes when relevant.
-* Avoid overwriting unrelated user work.
+Investigate:
 
-Keep changes logically separated.
+* Repeated calculations.
+* Unnecessary allocations.
+* Python loops.
+* JAX recompilation.
+* Repeated B-spline evaluation.
+* Repeated tensor calculations.
+* Repeated sequence construction.
 
-Do not create commits unless explicitly asked.
+Benchmark before making significant performance changes.
 
-Do not reset, checkout, or discard user changes unless explicitly instructed.
+Separate JAX compilation time from execution time.
+
+Do not sacrifice scientific clarity for small performance improvements.
 
 ---
 
-## How to work on requests
+# Missing dependencies
 
-For a request such as "improve the code":
+Identify all missing:
 
-### Phase 1: Understand
+* Python modules.
+* Data files.
+* NumPy arrays.
+* External packages.
+* Experimental dependencies.
 
-Inspect the repository before changing anything.
+Do not create fake replacements.
 
-Identify:
+Do not silently remove missing dependencies.
 
-* Main entry points.
-* Simulation code.
-* EPG implementation.
-* Optimization code.
-* Data processing.
-* Plotting.
-* Configuration.
-* Tests.
-* Documentation.
+Document what is required to reproduce each experiment.
+
+---
+
+# Git
+
+Before substantial work:
+
+* Inspect git status.
+* Do not overwrite unrelated user changes.
+* Do not reset or discard work without explicit instruction.
+* Keep changes logically separated.
+* Show a clear summary of modifications.
+
+Do not modify existing commits unless explicitly instructed.
+
+---
+
+# Workflow
+
+When asked to improve the repository:
+
+## Step 1: Understand
+
+Inspect the relevant repository structure and code.
+
+## Step 2: Map
+
+Create or update documentation describing:
+
+* Architecture.
+* Scientific model.
+* Important conventions.
 * Dependencies.
 
-Create a concise internal map of the architecture.
+## Step 3: Validate
 
-### Phase 2: Audit
+Establish tests or reference outputs before changing critical scientific code.
+
+## Step 4: Audit
 
 Look for:
 
 * Scientific errors.
-* Incorrect assumptions.
-* Hard-coded parameters.
-* Duplicated logic.
+* Numerical problems.
+* Hard-coded assumptions.
 * Poor naming.
-* Hidden state.
-* Fragile indexing.
-* Missing validation.
+* Poor architecture.
+* Duplication.
 * Missing tests.
-* Numerical inefficiencies.
 * Reproducibility problems.
-* Poor separation of concerns.
 
-Rank findings by importance.
+## Step 5: Plan
 
-Prioritize scientific correctness over style.
-
-### Phase 3: Plan
-
-Before making a large change, describe:
-
-1. What is wrong.
-2. Why it matters.
-3. What you will change.
-4. How you will validate it.
+Prioritize findings.
 
 Do not make large speculative changes.
 
-### Phase 4: Implement
+## Step 6: Implement
 
-Make the smallest coherent set of changes.
+Make coherent changes.
 
-Keep scientific behaviour unchanged unless the purpose of the change is explicitly to correct scientific behaviour.
+You are allowed to reorganize the repository substantially.
 
-### Phase 5: Validate
+## Step 7: Validate
 
-Run all relevant tests and checks.
+Run appropriate tests and representative simulations.
 
-For scientific changes, run representative simulations.
+## Step 8: Document
 
-Compare outputs against the previous implementation or known reference cases.
+Update documentation when architecture, scientific conventions, or usage changes.
 
-Report:
+## Step 9: Report
 
+Explain:
+
+* What changed.
+* Why it changed.
+* Scientific impact.
 * Tests performed.
-* Results.
 * Numerical differences.
-* Any remaining uncertainty.
+* Remaining uncertainties.
 
 ---
 
-## Important behaviour
+# Final standard
 
-Do not assume that existing code is correct.
+The final repository should feel like a professional scientific software project rather than a collection of MSc experiment scripts.
 
-Do not assume that existing code is wrong.
+A new researcher should be able to understand:
 
-Treat every important scientific operation as something that can be investigated.
+* Where the MRI physics lives.
+* Where the EPG implementation lives.
+* Where sequences are defined.
+* Where diffusion is implemented.
+* Where optimization happens.
+* Where information metrics are calculated.
+* Where experiments are run.
+* Where tests are located.
+* What physical conventions the code uses.
+* How to reproduce the published results.
 
-Do not rewrite the repository from scratch.
+The code should be understandable without having to reverse-engineer the author's original MSc workflow.
 
-Do not make broad changes merely because another coding style is more fashionable.
+Clarity is a scientific requirement.
 
-Do not remove seemingly redundant code until you understand why it exists.
-
-Do not change scientific conventions silently.
-
-Do not invent scientific justification.
-
-When uncertain, investigate first.
-
-The ideal result is code that is:
-
-* Scientifically trustworthy.
-* Reproducible.
-* General.
-* Modular.
-* Testable.
-* Understandable to an MRI physicist.
-* Efficient enough for optimization.
-* Easy to extend to new MRF sequence designs.
-
-The final code should make the underlying MRI physics easier to inspect, not harder.
+The repository should make the physics easier to inspect, validate, reproduce, and extend.
