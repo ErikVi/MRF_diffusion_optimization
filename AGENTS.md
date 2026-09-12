@@ -524,92 +524,159 @@ Do not "correct" the implementation based solely on generic MRI knowledge.
 
 # Undersampling and image-domain validation
 
-Undersampling experiments are a first-class validation component of this project.
+The repository includes an undersampling experiment intended to evaluate optimized diffusion-MRF sequences in an image-domain setting.
 
-The purpose is to test whether optimized diffusion-MRF sequences remain useful when realistic spatial encoding, k-space undersampling, reconstruction, and dictionary matching are introduced.
+The main external scientific reference implementation is:
 
-The undersampling workflow must support the scientific extensions specific to this repository:
+https://github.com/imphys/MRF_undersampling_optimization
 
-* Optimized flip-angle trains.
-* Optimized RF phase trains.
-* Diffusion preparation.
-* Multiple diffusion encoding directions.
-* Diffusion tensor-valued tissue models.
-* Mean diffusivity reconstruction.
-* Fractional anisotropy reconstruction.
-* T1 reconstruction.
-* T2 reconstruction.
-* M0 reconstruction where applicable.
-* Phase-sensitive signal evolution where applicable.
+This repository was developed by D.G.J. Heesterbeek and implements MRF undersampling-error modelling using spiral k-space sampling, point-spread functions, density compensation, NUFFT operations, and EPG-based signal modelling.
 
-The repository:
+Treat this repository as a scientific reference and potential implementation source.
 
-`https://github.com/imphys/MRF_undersampling_optimization`
+## Important differences
 
-by D.G.J. Heesterbeek may be used as an external reference implementation for undersampling methodology.
+The external implementation must not be copied blindly.
 
-Treat it as a reference, not as the architectural target for this repository.
+The current project differs scientifically in several important ways.
 
-Before adapting an algorithm from that repository:
+This project includes:
 
-1. Understand what physical or numerical operation it performs.
-2. Determine whether the same assumptions apply to the diffusion-MRF model used here.
-3. Identify dependencies on David's particular T1/T2-only formulation.
-4. Generalize the implementation to this project's parameter space where scientifically justified.
-5. Validate the adapted implementation independently.
+- Flip-angle optimization.
+- RF phase-train optimization.
+- Multiple phase-modulation strategies.
+- Diffusion-sensitive EPG evolution.
+- Diffusion tensors.
+- Multiple diffusion-encoding directions.
+- Mean diffusivity.
+- Fractional anisotropy.
+- Parameter maps containing diffusion information.
+- An existing JAX-based simulation framework.
 
-Do not force this repository into David's software architecture.
+The external implementation primarily targets conventional MRF tissue parameters such as T1, T2, and M0.
 
-Prefer integrating the underlying undersampling methodology into this repository's own modular structure.
+Therefore, adapt undersampling concepts to the current physical model rather than adapting the current physical model to the external code.
 
-Be particularly careful with:
+The current `mrf_diffusion` simulation framework remains the authoritative signal model.
 
-* Spiral trajectory conventions.
-* Coordinate normalization.
-* Density compensation.
-* NUFFT conventions.
-* Fourier transform scaling.
-* Image dimensions.
-* Zero padding.
-* Rotation of spiral interleaves.
-* Golden-angle rotation.
-* Phase handling.
-* Complex-valued images.
-* PSF interpretation.
-* Dictionary normalization.
-* Dictionary matching.
-* M0 estimation.
-* Reconstruction error metrics.
+Do not replace it with the EPG implementation from the external repository.
 
-Preserve optimized RF phase information throughout the complete simulation and reconstruction pipeline.
+## Scientific separation
 
-Do not accidentally reduce a complex phase-optimized signal to magnitude-only data unless this is an intentional experiment.
+Keep the following concepts separate:
 
-Diffusion maps should originate from physically valid diffusion tensors.
+1. Tissue and diffusion phantom generation.
+2. MRF signal simulation.
+3. Acquisition trajectory generation.
+4. k-space encoding.
+5. Undersampling.
+6. Image reconstruction.
+7. Dictionary matching or parameter estimation.
+8. Quantitative parameter-map evaluation.
 
-FA and MD should be calculated from the tensor model using the same definitions and units as the rest of the repository.
+The undersampling layer should operate on simulated MRF signals.
 
-Do not treat arbitrary scalar "FA scale" or "MD scale" parameters as measured FA and MD unless their mapping to the tensor-derived quantities has been explicitly established.
+It should not contain duplicated EPG physics.
 
-The undersampling pipeline should eventually be decomposed into reusable components for:
+## Parameters to preserve
 
-* Phantom generation.
-* Spatial tissue parameter maps.
-* Diffusion tensor maps.
-* Dictionary generation.
-* Fully sampled image generation.
-* k-space trajectory generation.
-* Forward NUFFT.
-* Density compensation.
-* Adjoint reconstruction.
-* Dictionary matching.
-* Parameter-map reconstruction.
-* Quantitative error analysis.
-* Visualization.
+The image-domain experiment should support at least:
 
-Experiment scripts should assemble these components rather than contain the implementations themselves.
+- T1.
+- T2.
+- M0 or proton density if used.
+- Mean diffusivity.
+- Fractional anisotropy.
+- Diffusion tensor orientation where relevant.
 
-If external source code is copied or adapted, inspect and respect its software license and retain required attribution.
+Do not reduce the phantom to only T1/T2 because the reference undersampling implementation does so.
+
+## Phase optimization
+
+RF phase evolution is part of the optimized sequence.
+
+The undersampling experiment must use the actual phase train associated with each tested sequence.
+
+Do not assume zero RF phase.
+
+Do not replace optimized phase trains with the phase convention used by the external repository unless scientific equivalence has been established.
+
+Distinguish clearly between:
+
+- RF excitation phase.
+- Complex MRF signal phase.
+- Spatial object phase.
+- k-space trajectory rotation phase.
+
+These are different physical concepts.
+
+## Diffusion maps
+
+The experiment should ultimately reconstruct or estimate quantitative maps sufficient to evaluate:
+
+- T1.
+- T2.
+- Mean diffusivity.
+- Fractional anisotropy.
+
+Where the underlying fitting model uses tensor components rather than MD and FA directly, preserve that relationship explicitly.
+
+Do not independently assign FA and MD values that correspond to an invalid diffusion tensor.
+
+## Reuse of external code
+
+Before reusing external code:
+
+1. Identify the exact function or algorithm.
+2. Determine its physical and numerical assumptions.
+3. Compare those assumptions with this project.
+4. Decide whether to reuse, adapt, or independently reimplement it.
+5. Add tests.
+6. Document provenance.
+
+Prefer extracting general algorithms such as:
+
+- Spiral trajectory handling.
+- Density compensation.
+- NUFFT encoding and reconstruction.
+- Point-spread-function calculations.
+
+Do not import external tissue simulation or EPG code when equivalent functionality exists in `mrf_diffusion`.
+
+## Licensing and provenance
+
+The external repository is distributed under GPL-3.0.
+
+Do not silently copy source code.
+
+If source is copied or substantially adapted:
+
+- Preserve required attribution.
+- Record the source repository and relevant file/function.
+- Document adaptation.
+- Ensure repository licensing remains compatible.
+
+If licensing compatibility is unclear, prefer a clean reimplementation based on the published algorithm and clearly document the scientific source.
+
+## Validation
+
+Validate the undersampling implementation progressively.
+
+At minimum include:
+
+1. Fully sampled reconstruction of a simple phantom.
+2. Fully sampled reconstruction of a complex-valued MRF time series.
+3. Single-parameter checkerboard phantom.
+4. Spiral undersampling without noise.
+5. Spiral undersampling with density compensation.
+6. Comparison against the external reference implementation for a compatible T1/T2 case.
+7. Phase-train sensitivity.
+8. Diffusion-sensitive phantom case.
+9. MD reconstruction or estimation.
+10. FA reconstruction or estimation.
+11. Optimized-sequence versus baseline-sequence comparison.
+
+Do not interpret improved reconstructed maps as evidence of sequence superiority until the reconstruction and matching pipeline has independently passed these tests.
 
 ---
 
