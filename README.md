@@ -1,4 +1,11 @@
 # MRF_diffusion_optimization
+
+Scientific validation: see [docs/validation.md](docs/validation.md) for installation,
+test coverage, known scientific discrepancies, and reference-simulation policy.
+Run `python -m pytest -q` after installing `requirements-validation.txt`.
+Expected failures document unresolved discrepancies; they do not certify those
+parts of the model as physically correct.
+
 Codes used for the purpose of the generation of results for the MSc project titled "On the robust optimization of diffusion-enhanced MRF sequences through flip angle and phase train design with comparative phase modulation strategies"
 
 - BESTMETHOD.py: This script evaluates and compares different phase modulation strategies for Magnetic Resonance Fingerprinting (MRF) flip angle trains using an Extended Phase Graph (EPG) simulation in JAX. It loads a predefined flip angle (FA) sequence, represents it with B-spline coefficients, and systematically applies various phase modulation methods (quadratic, linear, sinusoidal, alternating) at different modulation fractions. For each configuration, it computes normalized Cramér–Rao Lower Bounds (nCRLBs) for T1, T2, M0, fractional anisotropy (FA), and mean diffusivity (MD). The script identifies the phase modulation method and fraction that minimize the total nCRLB, and generates summary plots of performance metrics.
