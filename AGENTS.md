@@ -522,6 +522,97 @@ Do not "correct" the implementation based solely on generic MRI knowledge.
 
 ---
 
+# Undersampling and image-domain validation
+
+Undersampling experiments are a first-class validation component of this project.
+
+The purpose is to test whether optimized diffusion-MRF sequences remain useful when realistic spatial encoding, k-space undersampling, reconstruction, and dictionary matching are introduced.
+
+The undersampling workflow must support the scientific extensions specific to this repository:
+
+* Optimized flip-angle trains.
+* Optimized RF phase trains.
+* Diffusion preparation.
+* Multiple diffusion encoding directions.
+* Diffusion tensor-valued tissue models.
+* Mean diffusivity reconstruction.
+* Fractional anisotropy reconstruction.
+* T1 reconstruction.
+* T2 reconstruction.
+* M0 reconstruction where applicable.
+* Phase-sensitive signal evolution where applicable.
+
+The repository:
+
+`https://github.com/imphys/MRF_undersampling_optimization`
+
+by D.G.J. Heesterbeek may be used as an external reference implementation for undersampling methodology.
+
+Treat it as a reference, not as the architectural target for this repository.
+
+Before adapting an algorithm from that repository:
+
+1. Understand what physical or numerical operation it performs.
+2. Determine whether the same assumptions apply to the diffusion-MRF model used here.
+3. Identify dependencies on David's particular T1/T2-only formulation.
+4. Generalize the implementation to this project's parameter space where scientifically justified.
+5. Validate the adapted implementation independently.
+
+Do not force this repository into David's software architecture.
+
+Prefer integrating the underlying undersampling methodology into this repository's own modular structure.
+
+Be particularly careful with:
+
+* Spiral trajectory conventions.
+* Coordinate normalization.
+* Density compensation.
+* NUFFT conventions.
+* Fourier transform scaling.
+* Image dimensions.
+* Zero padding.
+* Rotation of spiral interleaves.
+* Golden-angle rotation.
+* Phase handling.
+* Complex-valued images.
+* PSF interpretation.
+* Dictionary normalization.
+* Dictionary matching.
+* M0 estimation.
+* Reconstruction error metrics.
+
+Preserve optimized RF phase information throughout the complete simulation and reconstruction pipeline.
+
+Do not accidentally reduce a complex phase-optimized signal to magnitude-only data unless this is an intentional experiment.
+
+Diffusion maps should originate from physically valid diffusion tensors.
+
+FA and MD should be calculated from the tensor model using the same definitions and units as the rest of the repository.
+
+Do not treat arbitrary scalar "FA scale" or "MD scale" parameters as measured FA and MD unless their mapping to the tensor-derived quantities has been explicitly established.
+
+The undersampling pipeline should eventually be decomposed into reusable components for:
+
+* Phantom generation.
+* Spatial tissue parameter maps.
+* Diffusion tensor maps.
+* Dictionary generation.
+* Fully sampled image generation.
+* k-space trajectory generation.
+* Forward NUFFT.
+* Density compensation.
+* Adjoint reconstruction.
+* Dictionary matching.
+* Parameter-map reconstruction.
+* Quantitative error analysis.
+* Visualization.
+
+Experiment scripts should assemble these components rather than contain the implementations themselves.
+
+If external source code is copied or adapted, inspect and respect its software license and retain required attribution.
+
+---
+
 # JAX
 
 JAX is a core dependency.
