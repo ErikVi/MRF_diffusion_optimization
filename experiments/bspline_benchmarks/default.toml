@@ -1,0 +1,4 @@
+# Run: mrf-benchmark-splines --config experiments/bspline_benchmarks/default.toml
+# Omitted settings retain the documented historical defaults; inspect with --dry-run.
+input_directory = "../../data/input"
+output_directory = "../../data/output/bspline_benchmarks"

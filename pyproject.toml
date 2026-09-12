@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrf-diffusion"
+version = "0.1.0"
+description = "Validated legacy EPG and diffusion-enhanced MRF sequence research"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["jax>=0.4", "numpy", "scipy"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+experiments = ["matplotlib", "h5py", "sigpy", "tqdm"]
+
+[project.scripts]
+mrf-optimize = "mrf_diffusion.experiments.optimization:main"
+mrf-compare-phases = "mrf_diffusion.experiments.phase_comparison:main"
+mrf-benchmark-splines = "mrf_diffusion.experiments.bspline_benchmark:main"
+mrf-phantom = "mrf_diffusion.experiments.undersampling:main"
+mrf-inspect-hdf5 = "mrf_diffusion.io.hdf5:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+target-version = ["py312"]

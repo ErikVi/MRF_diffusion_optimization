@@ -1,0 +1,4 @@
+# Run: mrf-compare-phases --config experiments/phase_comparison/default.toml
+# Omitted settings retain the documented historical defaults; inspect with --dry-run.
+input_directory = "../../data/input"
+output_directory = "../../data/output/phase_comparison"

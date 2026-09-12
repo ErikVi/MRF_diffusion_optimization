@@ -3,6 +3,7 @@
 Usage: python tools/capture_validation_reference.py path/to/candidate.json
 Review differences and their scientific cause before replacing a committed baseline.
 """
+
 import hashlib
 import importlib.metadata
 import json
@@ -13,8 +14,10 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "src"))
 import jax
 import numpy as np
+
 jax.config.update("jax_enable_x64", True)
 jax.config.update("jax_platform_name", "cpu")
 from tests.reference_cases import compute_reference_cases
@@ -30,13 +33,29 @@ def main():
     values = compute_reference_cases()
     result = {
         "classification": "legacy characterization; known defects intentionally retained",
-        "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        "source_sha256": hashlib.sha256((ROOT/"EPG_blocks_jaxcode.py").read_bytes()).hexdigest(),
-        "python": platform.python_version(), "platform": platform.platform(),
-        "backend": jax.default_backend(), "jax_enable_x64": bool(jax.config.jax_enable_x64),
-        "versions": {p: importlib.metadata.version(p) for p in ["jax", "jaxlib", "numpy", "scipy", "pytest"]},
-        "inputs": {"angles_rad": np.asarray(ANGLES).tolist(), "phases_rad": np.asarray(PHASES).tolist(),
-                   "T1_T2_D_M": np.asarray(PARAMETERS).tolist(), "tensor_mm2_per_s": np.asarray(TENSOR).tolist()},
+        "source_commit": subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
+        ).strip(),
+        "source_sha256": {
+            str(p.relative_to(ROOT))
+            .replace("\\", "/"): hashlib.sha256(p.read_bytes())
+            .hexdigest()
+            for p in sorted((ROOT / "src" / "mrf_diffusion").rglob("*.py"))
+        },
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "backend": jax.default_backend(),
+        "jax_enable_x64": bool(jax.config.jax_enable_x64),
+        "versions": {
+            p: importlib.metadata.version(p)
+            for p in ["jax", "jaxlib", "numpy", "scipy", "pytest"]
+        },
+        "inputs": {
+            "angles_rad": np.asarray(ANGLES).tolist(),
+            "phases_rad": np.asarray(PHASES).tolist(),
+            "T1_T2_D_M": np.asarray(PARAMETERS).tolist(),
+            "tensor_mm2_per_s": np.asarray(TENSOR).tolist(),
+        },
         "cases": {},
     }
     for name, value in values.items():

@@ -1,0 +1,166 @@
+{
+  "source_commit": "0f76ee49a7ed524431e45abd8fbbbbcbbb698946",
+  "provenance": "Values from original core evaluated side by side with refactored core; all maximum absolute differences zero. Inputs in tests/test_architecture_regression.py.",
+  "cases": {
+    "tensor_signal_inversion_False": {
+      "shape": [
+        2,
+        8
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        [
+          0.0,
+          -0.018668587810498793,
+          0.017982669261570727,
+          -0.0539166141149614,
+          0.0,
+          -0.03095018562513227,
+          0.030507710068195863,
+          -0.09342005787047242
+        ],
+        [
+          0.07151660028751879,
+          0.14279463656935293,
+          0.08039020907059448,
+          0.13293368062114808,
+          0.11680741362306174,
+          0.2367356627590939,
+          0.13519514226320112,
+          0.22804468625558644
+        ]
+      ]
+    },
+    "tensor_signal_inversion_True": {
+      "shape": [
+        2,
+        9
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        [
+          0.0,
+          0.0,
+          -0.050515353954088314,
+          0.05002515522176773,
+          -0.15501132511663823,
+          0.007864052962443822,
+          -0.0228266409188839,
+          -0.014707415277766346,
+          0.06259956525830387
+        ],
+        [
+          -1.141853107092593e-16,
+          0.1888686096628613,
+          0.38638817688125593,
+          0.22419463938148543,
+          0.38336244028681354,
+          -0.038948747899403065,
+          -0.2406616299606576,
+          -0.058806435251953885,
+          -0.13009118695580732
+        ]
+      ]
+    },
+    "bounds_free form": {
+      "shape": [
+        3
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        38.22991371548001,
+        1.6842869365581965,
+        49.43403326848075
+      ]
+    },
+    "L1_free form": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 89.34823392051896
+    },
+    "L2_free form": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 3908.086770366969
+    },
+    "objective_gradient": {
+      "shape": [
+        8
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        -211.66086528148827,
+        -107.1958199153967,
+        -105.62966524346832,
+        -65.04120910338315,
+        0.025754443003650804,
+        -0.0007745526189386014,
+        -0.0011506525267945494,
+        0.0010252858902877133
+      ]
+    },
+    "bounds_no phase modulation": {
+      "shape": [
+        3
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        38.229756527156376,
+        1.684279545394316,
+        49.43383953817362
+      ]
+    },
+    "L1_no phase modulation": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 89.34787561072432
+    },
+    "L2_no phase modulation": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 3908.055573198587
+    },
+    "bounds_quadratic": {
+      "shape": [
+        3
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        38.23851684320873,
+        1.6842930093117063,
+        49.445563214903
+      ]
+    },
+    "L1_quadratic": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 89.36837306742343
+    },
+    "L2_quadratic": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 3909.8847349485422
+    },
+    "bounds_quadratic malleable": {
+      "shape": [
+        3
+      ],
+      "maximum_absolute_difference": 0.0,
+      "values": [
+        38.241444047760695,
+        1.6840401885112941,
+        49.44988763192384
+      ]
+    },
+    "L1_quadratic malleable": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 89.37537186819583
+    },
+    "L2_quadratic malleable": {
+      "shape": [],
+      "maximum_absolute_difference": 0.0,
+      "values": 3910.5354210244277
+    }
+  }
+}

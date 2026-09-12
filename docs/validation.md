@@ -2,10 +2,11 @@
 
 ## Scope and execution
 
-This suite tests the unchanged `EPG_blocks_jaxcode.py` at baseline commit
-`0f76ee49a7ed524431e45abd8fbbbbcbbb698946`. It does not import the experiment
-scripts, require the missing experiment arrays, or change optimization behavior.
-No existing scientific source file was modified.
+The foundation was captured against `EPG_blocks_jaxcode.py` at commit
+`0f76ee49a7ed524431e45abd8fbbbbcbbb698946`. Tests now exercise the layered
+`mrf_diffusion` package. The original frozen reference file is unchanged.
+Refactoring preserves scientific behavior, including all nine known discrepancies.
+The small core suite requires no external experiment arrays.
 
 Use Python 3.12 in a fresh environment, then from the repository root:
 
@@ -18,9 +19,10 @@ The pinned versions describe the validation environment, not the environment use
 for the thesis. Tests select CPU and x64. Missing JAX is an installation failure,
 not an automatic skip. Only the core scientific dependency set is installed.
 
-Validated result: **63 passed, 9 expected failures, no unexpected failures or
-skips**, 102.28 seconds including compilation, on Windows / Python 3.12.14 /
-JAX 0.11.1 CPU. References were captured and verified in separate processes.
+Foundation result: **63 passed, 9 expected failures**. Final architecture integration
+result: **86 passed, 9 expected failures**, 183.82 seconds including compilation,
+on Windows / Python 3.12.14 / JAX 0.11.1 CPU. No unexpected failures or skips.
+References were captured and verified in separate processes.
 
 For a quicker physics-only loop:
 
@@ -206,9 +208,9 @@ It refuses to overwrite existing files. Review each difference before replacing 
 baseline. Tests never regenerate expected values. Tensor legacy snapshots preserve
 known defects and are not independent diffusion validation.
 
-## Before restructuring
+## Before new scientific studies or model corrections
 
-First correct/validate the tensor diffusion operator, negative-gradient boundary,
+In separate reviewed scientific changes, correct/validate the tensor diffusion operator, negative-gradient boundary,
 MD/FA derivatives and tissue-weight aggregation in separate scientific changes.
 Resolve the FA/MD coordinate model: a matrix pseudoinverse of the metric gradient
 does not define a unique inverse parameterization of a symmetric diffusion tensor.
@@ -221,3 +223,70 @@ FA derivative at isotropy, invalid-tensor rejection, hardware/sequence validatio
 phantom reconstruction, optimizer convergence, and reproduction of thesis figures.
 The current direct FIM inverse still has no explicit rank/conditioning guard.
 The suite detects illustrative singular designs; it does not add such a guard.
+
+## Architectural refactor validation
+
+| Step | Verification | Result |
+|---|---|---|
+| Original checkout | Foundation suite before extraction | 63 passed, 9 xfailed (85.43 s) |
+| Layer extraction/naming | Suite and nine frozen reference simulations | 63 passed, 9 xfailed (78.71 s) |
+| Explicit configuration/shared decoding | Suite and reference simulations | 63 passed, 9 xfailed (76.50 s) |
+| Experiments/package/shared spline basis | Expanded suite | 81 passed, 9 xfailed (166.20 s) |
+| Final package/workflow foundation | Full suite including initialization/constraints and host dictionary grids | 86 passed, 9 xfailed (183.82 s) |
+| Original/current kernels side by side | Two inversion modes, all four phase methods, L1/L2 costs, bounds and free-phase objective gradient | Maximum absolute difference 0 for all 15 comparisons |
+| Spline duplicate comparison | Degrees 1/2/3, repeated knots, interior and endpoints | Maximum absolute difference 1.11e-16 |
+
+`tests/reference/architecture_objectives.json` preserves the additional original
+values; inputs are in `tests/test_architecture_regression.py`. These characterize
+legacy costs, including known defects; they do not independently validate diffusion
+estimation. The original `legacy_cpu_x64.json` has not been recaptured.
+
+`tests/test_architecture.py` also checks object-input/kernel equality, configured
+timing and its derivative, experiment dry-run import safety, file-relative
+configuration, missing-input errors, layer dependency direction, local solver state,
+tensor grid scaling, phantom shape/mask and known dictionary matching.
+The extraction initially exposed a refactoring error in scalar preparation; the
+original five-operation preparation was restored before accepting stage two.
+No changed scientific baseline was accepted.
+
+Retired duplicate spline evaluators alias the canonical evaluator. Fitting and
+evaluation share basis recursion while B01 remains deliberately unchanged.
+Scalar/tensor diffusion have not been deduplicated because equivalence tests fail.
+Direct inverse semantics and optimizer constraint derivative policy are unchanged.
+
+### Workflow limitations carried forward
+
+- Phase scan baseline splits a malformed coefficient vector. Plots now use the
+  three actual returned bounds instead of attempting nonexistent FA/MD columns.
+- Phantom maps do not generate spatially varying diffusion signals; dictionary
+  scale assignments are swapped during reconstruction; some tensors are invalid.
+- Original inputs and `UEEphase_DH` are unavailable. Synthetic smoke fixtures
+  test wiring and output generation, not reproduction of thesis experiments.
+- Hardware calibration, full optimization and truncation convergence, NUFFT
+  accuracy and thesis figure reproduction remain open.
+
+### Final integration checks
+
+All four original experiment initializers, phase affine terms and inequality
+constraints were compared directly by extracting the original OPTIMIZATION.py
+branch and evaluating it with the original core. Maximum absolute difference was
+zero for every method, including the lower-constraint Jacobian. Frozen values and
+provenance are in `tests/reference/experiment_initialization.json`, exercised by
+`tests/test_initialization.py`.
+
+Synthetic workflow smoke checks exercised an eight-pulse, one-iteration optimizer,
+a two-point phase scan, a three-repeat spline benchmark, dictionary construction,
+HDF5 inspection and fourteen generated plots. Optimization intentionally stopped
+at its one-iteration limit (status 9); convergence was not claimed. All five
+installed console entry points passed configuration/help checks outside the repo.
+Editable installation and a distributable wheel build both succeeded.
+
+Dictionary construction initially rejected JAX scalar keys. Converting host keys
+to Python floats preserves the original NumPy-key values and signal arrays; a
+regression covers both NumPy and JAX grids. This is an API compatibility adjustment,
+not a physical correction. Plot labels now call legacy MD values tensor trace;
+underlying numbers and the reconstruction's known scale swap are unchanged.
+
+The candidate-capture tool now hashes package sources. Existing references still
+record the original source hash and remain byte-for-byte unchanged. The stage
+comparisons are architectural regressions; none rescinds the discrepancy findings.
