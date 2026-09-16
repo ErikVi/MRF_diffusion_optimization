@@ -1,5 +1,39 @@
 # Scientific validation foundation
 
+## Executed end-to-end validation
+
+Final complete suite: **171 passed, 9 expected failures, 0 unexpected failures**,
+224.27 seconds on 2026-09-16. The original 170-test suite and the new diagnostic
+also passed before experiment execution. No regression baseline was recaptured.
+
+The [end-to-end experiment](end_to_end_validation.md) was created and executed in
+separate smoke and full configurations. The full SLSQP run converged in 48
+iterations; both Cartesian quantitative-recovery gates passed. Paired-noise and
+doubled-state checks passed. New finite-difference diagnostics verify convergence,
+FIM rank/symmetry and analytical density/object-phase derivatives. Existing MRI
+physics and the nine known discrepancies remain unchanged. The lower objective
+did not confer general improvement in the measured undersampling map errors.
+
+## Spatial acquisition extension
+
+The complete suite now reports **116 passed, 9 expected failures** (181.92 s,
+Windows / Python 3.12.14 / JAX 0.11.1 CPU / SigPy 0.1.27). This comprises
+**30 passing acquisition cases** and the existing 86 passing scientific and
+architecture cases. All nine previously documented discrepancies remain unchanged;
+no original physics reference was recaptured. No unexpected failures or skips.
+
+The acquisition tests compare against an independent dense Fourier operator,
+analytical rotation/weight cases, complex phase/amplitude invariants and actual
+pinned external helper outputs. See [acquisition validation](acquisition.md) for
+the numerical deviations, provenance and reproducible comparison command.
+The documented composition example also ran successfully; dependency consistency
+and Black formatting checks passed.
+
+An initial run encountered six fixture setup errors from an inaccessible Windows
+pytest temporary directory, not numerical failures. The successful run used a
+fresh workspace `--basetemp` directory and `-p no:cacheprovider`; no filesystem
+permissions or scientific tests were weakened to work around that environment issue.
+
 ## Scope and execution
 
 The foundation was captured against `EPG_blocks_jaxcode.py` at commit
@@ -11,7 +45,7 @@ The small core suite requires no external experiment arrays.
 Use Python 3.12 in a fresh environment, then from the repository root:
 
 ```sh
-python -m pip install -r requirements-validation.txt
+python -m pip install -r requirements-acquisition-validation.txt
 python -m pytest -q
 ```
 
@@ -290,3 +324,48 @@ underlying numbers and the reconstruction's known scale swap are unchanged.
 The candidate-capture tool now hashes package sources. Existing references still
 record the original source hash and remain byte-for-byte unchanged. The stage
 comparisons are architectural regressions; none rescinds the discrepancy findings.
+
+## Forward phantom validation (2026-09-15)
+
+The 32 tests in `tests/test_forward_phantom.py` validate tensor-derived phantom maps, unique-tissue simulation, actual RF train propagation, independent object phase and density, frame ordering, complex NUFFT acquisition, noise and saved artifacts. See [model and limits](forward_phantom.md). The synthetic 16-by-16, 16-frame spiral demonstration produced (16,1,18) samples. Its fully sampled Cartesian counterpart had relative image error 1.2198149079190903e-5 with oversampling 2 and kernel width 6. No physics correction or quantitative matching was introduced at that stage.
+
+Complete suite: **148 passed, 9 expected failures**, 204.15 s. All nine expected failures are the previously documented scientific discrepancies. Existing EPG, tensor signal kernels and optimization files have no changes in this task.
+
+## Quantitative recovery validation
+
+The subsequent [external common-case comparison](undersampling_validation.md)
+passes 68 required acquisition/signal checks while retaining three exploratory
+precision failures and documenting incompatible rotating-case UEE map predictions.
+This does not certify full diffusion/FA/optimized-phase validation.
+After adding six frozen-reference regression cases, the complete suite passed:
+**170 passed, 9 expected failures**, 197.72 s (2026-09-16). No MRI physics changed.
+
+Final complete suite: **164 passed, 9 expected failures**, 197.71 s. All original
+scientific regression cases and the restored legacy dictionary API pass with
+their existing expected discrepancies; no EPG or optimization kernels changed.
+
+`tests/test_quantitative_recovery.py` adds 16 cases: budget rejection before any
+simulation, complex self-matching of every tensor atom, analytic density/object
+phase recovery, discrimination of identical-magnitude but different-phase signals,
+zero/nonfinite/tied signals, homogeneous and T1/T2/MD/FA/combined phantom recovery,
+wrong RF phase rejection by residual, off-grid reference-gate failure before
+undersampling, operator-only gain calibration, analytical map-error metrics,
+missing-input behavior, and paired sequence/noise reproducibility. Physical MD and
+FA are verified from recovered tensor eigenvalues. The legacy dictionary API is
+preserved separately from the new tensor dictionary.
+
+The synthetic baseline passed all reference gates. Noiseless Cartesian recovery
+had zero T1/T2/MD/FA grid error, density RMSE approximately 1.16e-5, and complex
+image relative error 1.2198149079190903e-5. The 32 dictionary atoms had minimum
+normalized-correlation margin 1.9250776644996748e-5 with no ambiguous self-matches.
+Spiral interleaf counts 1, 4, 16 were evaluated at k-space channel SD 0 and 0.001
+with seed 2026, using radial-increment DCF and central-impulse gain calibration.
+T2 errors were not monotonic with interleaf count; these results are retained.
+The golden schedules at different interleaf counts are not nested sample sets.
+
+No actual optimized archives were available, so **optimized-versus-baseline
+improvement is undetermined for T1, T2, MD and FA in every condition**. Tests using
+identical supplied archives validate pairing and repeatability, not optimization.
+See [quantitative model and limitations](quantitative_undersampling.md). On-grid
+agreement of synthesis and fitting does not resolve the nine legacy scientific
+discrepancies or demonstrate unrestricted tensor identifiability.

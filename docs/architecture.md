@@ -1,8 +1,33 @@
 # Architecture and migration
 
+## End-to-end experiment orchestration
+
+`experiments/end_to_end_validation/run_experiment.py` composes the established
+optimization, sequence, phantom, simulation, acquisition and reconstruction APIs.
+It adds no MRI equations. `information_diagnostic.py` performs converged finite
+differences through the authoritative simulator on the existing prolate tensor
+family; this is experiment-specific evaluation, not a replacement objective.
+`analysis.py` creates common-scale figures and reports; `replot.py` regenerates
+them from saved data without recomputation. All package physics remains unchanged.
+The run stores configuration/source provenance, sequences, optimization, signals,
+phantom, acquisition, reconstruction, parameter maps, metrics, figures and report
+in separate directories.
+
 This refactor preserves the numerical behavior characterized at commit
 `0f76ee49a7ed524431e45abd8fbbbbcbbb698946`. It does not certify or correct the
 scientific model. Known discrepancies remain executable strict-xfail tests.
+
+## Spatial encoding extension
+
+The independent `encoding` package accepts complex 2-D images and normalized
+`(ky,kx)` coordinates. Trajectory generation, weight estimation, sampling and PSF
+diagnostics are separate APIs. `reconstruction.images` composes a weighted
+adjoint without implicit normalization. Neither layer imports EPG, MRF simulation
+or experiment settings. SigPy is an optional, lazily loaded CPU backend.
+See [acquisition conventions and validation](acquisition.md) for array shapes,
+units, interpolation tolerances and external provenance. The historical phantom
+workflow remains unchanged; no image-domain fitting or sequence optimization is
+introduced by this extension.
 
 ## Dependency direction
 
@@ -15,6 +40,7 @@ experiments -> optimization -> information -> simulation -> epg
 
 experiments -> visualization, io
 undersampling experiment -> reconstruction, phantoms, optional external tools
+reconstruction/images -> encoding -> NumPy, optional SigPy
 ```
 
 Physics does not import sequences, optimizers, plots, files, or experiments.
@@ -48,6 +74,9 @@ optimizer, import plotting/NUFFT dependencies, or create an output directory.
 | `optimization/constraints.py`, `settings.py`, `solver.py` | Sequence constraints, settings, SLSQP execution with local history |
 | `experiments/` inside package | Import-safe optimization, phase comparison, spline benchmark and phantom workflows; settings/TOML loader |
 | `reconstruction/` | Dictionary construction, matching and scale lookup |
+| `reconstruction/images.py` | Explicit weighted-adjoint image reconstruction |
+| `encoding/trajectory.py` | Supplied/generated trajectories and named rotation schedules |
+| `encoding/nufft.py`, `density_compensation.py`, `psf.py` | Independent sampling operator, weight estimators and PSF diagnostics |
 | `phantoms/checkerboard.py` | Historical tensor phantom generator |
 | `visualization/plots.py`, `io/` | Plots, array/metadata output, HDF5 inspection |
 | root `experiments/*/default.toml` | Runnable experiment configurations with file-relative paths |
@@ -113,3 +142,22 @@ The original objective and constraints use cubic splines; optimization/phase
 experiments reject other degrees until that API is extended and validated.
 The phase benchmark can evaluate other degrees directly. A new dataset or sequence
 is not automatically scientifically valid merely because it can be configured.
+
+## Forward phantom extension
+
+See [forward phantom](forward_phantom.md) for geometry, tensor maps, unique-tissue
+simulation, frame acquisition and adjoint layers. `mrf-phantom` assembles these
+components; historical matching remains under `mrf-legacy-phantom`.
+
+## Quantitative recovery extension
+
+`reconstruction/tensor_dictionary.py` builds bounded tensor-model dictionaries;
+the legacy `dictionary.py` remains unchanged. `quantitative.py` fits complex time
+series, `metrics.py` evaluates maps, and `calibrated.py` provides optional
+operator-only gain calibration around the existing adjoint.
+`experiments/quantitative_undersampling.py` controls comparisons and mandatory
+reference gates. `visualization/quantitative.py` exports triptychs and curves.
+Configuration is `experiments/undersampling/quantitative.toml`.
+See [scientific details](quantitative_undersampling.md).
+
+Physics kernels and optimization are unchanged.

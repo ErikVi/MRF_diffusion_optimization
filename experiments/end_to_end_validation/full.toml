@@ -1,0 +1,77 @@
+run_name = "full"
+length = 64
+knot_setting = 10
+maximum_iterations = 150
+state_count = 72
+image_size = 16
+interleaf_counts = [1, 4, 16]
+noise_levels = [0.0, 0.001]
+noise_seed = 2026
+initial_minimum_rad = 0.25
+initial_excursion_rad = 0.35
+initial_phase_fraction = 0.18
+object_phase_edge_rad = 0.6283185307179586
+output_directory = "../../data/output/end_to_end_validation"
+
+[imaging.phantom]
+t1_ms = [750.0, 1250.0]
+t2_ms = [70.0, 90.0]
+proton_density = [1.0, 0.9]
+geometry = "checkerboard"
+
+[imaging.diffusion]
+mean_diffusivity_mm2_per_s = [0.0007, 0.001]
+fractional_anisotropy = [0.2, 0.7]
+principal_directions_xyz = [[1.0,0.0,0.0],[0.0,1.0,0.0]]
+
+[imaging.dictionary]
+t1_ms = [750.0,1250.0]
+t2_ms = [70.0,90.0]
+mean_diffusivity_mm2_per_s = [0.0007,0.001]
+fractional_anisotropy = [0.2,0.7]
+principal_directions_xyz = [[1.0,0.0,0.0],[0.0,1.0,0.0]]
+max_entries = 10000
+max_working_bytes = 268435456
+voxel_batch_size = 256
+
+[imaging.trajectory]
+kind = "generated_spiral"
+schedule = "golden"
+initial_angle_rad = 0.0
+field_of_view_m = 0.24
+frequency_sampling_factor = 1.0
+density_exponent = 6.0
+max_gradient_t_per_m = 0.03
+max_slew_t_per_m_per_s = 150.0
+oversampling = 2.0
+kernel_width = 6.0
+
+[imaging.comparison]
+density_compensation = "radial_increment"
+unit_impulse_gain = true
+reference_image_relative_tolerance = 0.0001
+reference_density_relative_tolerance = 0.0001
+ambiguity_tolerance = 1e-10
+
+[optimizer]
+aggregation = "L1"
+initial_phase_method = "quadratic"
+
+[optimizer.sequence]
+echo_time_ms = 4.0
+repetition_time_ms = 15.0
+order_step = 1
+tensor_preparation_wavevector = 300.0
+tensor_readout_wavevector = 100.0
+
+[optimizer.constraints]
+minimum_flip_angle = 0.17453292519943295
+maximum_flip_angle = 1.0471975511965976
+maximum_angle_step = 0.02
+coefficient_minimum = -1000.0
+coefficient_maximum = 1000.0
+
+[optimizer.solver]
+method = "SLSQP"
+minimum_callback_iterations = 1000
+callback_change_tolerance = 0.01

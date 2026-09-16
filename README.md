@@ -1,5 +1,32 @@
 # Diffusion-enhanced MRF sequence research
 
+## Executable end-to-end experiment
+
+`experiments/end_to_end_validation/` connects educated initialization, joint
+flip-angle/RF-phase optimization, information diagnostics, tensor phantom,
+complex NUFFT acquisition, reconstruction and quantitative matching. Run:
+
+```sh
+python -m pytest -q
+python experiments/end_to_end_validation/run_experiment.py --config experiments/end_to_end_validation/smoke.toml
+python experiments/end_to_end_validation/run_experiment.py --config experiments/end_to_end_validation/full.toml
+```
+
+Results go to `data/output/end_to_end_validation/<run_name>/`; use a new run name
+for repeats. See the [experiment instructions](experiments/end_to_end_validation/README.md).
+The existing objective excludes diffusion parameters; separate finite-difference
+information diagnostics and map errors expose that limitation. Read each saved
+`report/experiment_report.md` and component certification before interpreting results.
+The full pipeline remains conditional on known tensor-physics limitations.
+The [executed full-run summary](docs/end_to_end_validation.md) records successful
+optimization and reference recovery, but no general undersampling superiority.
+
+Regenerate report/map figures without optimization:
+
+```sh
+python experiments/end_to_end_validation/replot.py data/output/end_to_end_validation/full
+```
+
 EPG simulation, diffusion modeling, B-spline sequence design, JAX derivatives,
 Fisher information and constrained optimization for Erik Višnar's [MSc thesis](docs/thesis.pdf).
 
@@ -15,7 +42,7 @@ Python 3.12 was used for validation. From this repository:
 ```sh
 python -m venv .venv
 # Activate the environment for your shell.
-python -m pip install -r requirements-validation.txt
+python -m pip install -r requirements-forward-validation.txt
 python -m pip install -e .
 python -m pytest -q
 ```
@@ -59,6 +86,8 @@ All paths in this table are relative to `src/mrf_diffusion/`.
 | Diffusion attenuation, tensors and metrics | `epg/diffusion.py`, `diffusion/` |
 | Timing, phase trains, B-splines | `sequence/` |
 | MRF signals | `simulation/` |
+| Trajectories, NUFFT, density compensation, PSFs | `encoding/` |
+| Weighted-adjoint image reconstruction | `reconstruction/images.py` |
 | Jacobians, FIM, CRLB | `information/` |
 | Objectives, constraints, solver | `optimization/` |
 | MSc workflows and settings | `experiments/` |
@@ -71,6 +100,17 @@ Documentation: [architecture/migration](docs/architecture.md),
 [scientific model](docs/scientific_model.md), [conventions](docs/conventions.md),
 [units and defaults](docs/units.md), [validation](docs/validation.md).
 
+The independent [spatial acquisition API](docs/acquisition.md) preserves complex
+images and provides explicit forward/adjoint operations, spiral schedules, density
+weights and PSFs. Install its optional backend with
+`python -m pip install -e ".[acquisition]"`. The [forward phantom pipeline](docs/forward_phantom.md) connects it to the existing
+tensor simulator. [Quantitative recovery](docs/quantitative_undersampling.md) adds
+complex tensor-dictionary fitting and controlled undersampling comparisons, guarded
+by fully sampled recovery tests. Actual optimized sequence inputs are still required.
+
+[External undersampling cross-validation](docs/undersampling_validation.md) records
+the measured-spiral common case, numerical differences and remaining limits.
+
 ## Experiment entry points
 
 ```sh
@@ -78,6 +118,7 @@ mrf-optimize --config experiments/optimization/default.toml --dry-run
 mrf-compare-phases --config experiments/phase_comparison/default.toml --dry-run
 mrf-benchmark-splines --config experiments/bspline_benchmarks/default.toml --dry-run
 mrf-phantom --config experiments/undersampling/default.toml --dry-run
+mrf-compare-undersampling --config experiments/undersampling/quantitative.toml --dry-run
 mrf-inspect-hdf5 --help
 ```
 
@@ -95,7 +136,8 @@ Optimization records coefficients, trains, solver status/history, settings and
 package versions, plus diagnostic plots. Phase comparison records its explicitly
 legacy baseline and three actual bounds. Benchmark timing excludes compilation
 and synchronizes the device; traced memory is Python memory, not device memory.
-Phantom reconstruction remains an unvalidated historical workflow.
+The new phantom command produces complex forward acquisitions and adjoint frames.
+The historical matching workflow remains unvalidated under mrf-legacy-phantom.
 
 Former root scripts and monolithic imports are retired. Use the
 [migration table](docs/architecture.md#migration-from-original-files) for new names.

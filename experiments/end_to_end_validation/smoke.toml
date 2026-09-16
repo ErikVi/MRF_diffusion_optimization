@@ -1,0 +1,14 @@
+run_name = "smoke"
+length = 24
+knot_setting = 8
+maximum_iterations = 3
+state_count = 28
+image_size = 8
+interleaf_counts = [1, 4]
+noise_levels = [0.0]
+noise_seed = 2026
+initial_minimum_rad = 0.25
+initial_excursion_rad = 0.1
+initial_phase_fraction = 0.18
+object_phase_edge_rad = 0.6283185307179586
+output_directory = "../../data/output/end_to_end_validation"
