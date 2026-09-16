@@ -1,0 +1,3 @@
+# CPU suite including forward phantom plots.
+-r requirements-acquisition-validation.txt
+matplotlib==3.11.1

@@ -1,0 +1,69 @@
+# Restricted 32-entry validation grid; synthetic unoptimized baseline.
+# Run: mrf-compare-undersampling --config experiments/undersampling/quantitative.toml
+input_directory = "../../data/input"
+output_directory = "../../data/output/quantitative_undersampling"
+
+[phantom]
+image_shape = [16, 16]
+tile_shape = [4, 4]
+geometry = "checkerboard"
+t1_ms = [750.0, 1250.0]
+t2_ms = [70.0, 90.0]
+proton_density = [1.0, 0.9]
+
+[diffusion]
+mean_diffusivity_mm2_per_s = [0.0007, 0.001]
+fractional_anisotropy = [0.2, 0.7]
+principal_directions_xyz = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
+
+[sequence]
+flip_angles_rad = [0.2, 0.3, 0.4, 0.25, 0.5, 0.35, 0.2, 0.45]
+rf_phase_mode = "reference"
+reference_method = "quadratic"
+reference_fraction = 0.18
+
+[simulation]
+direction_count = 2
+state_count = 20
+include_inversion = false
+sampling = false
+
+[trajectory]
+kind = "generated_spiral"
+schedule = "golden"
+design_matrix_size = 16
+field_of_view_m = 0.24
+acceleration = 4.0
+frequency_sampling_factor = 1.0
+density_exponent = 6.0
+max_gradient_t_per_m = 0.03
+max_slew_t_per_m_per_s = 150.0
+oversampling = 2.0
+kernel_width = 6.0
+
+[object_phase]
+enabled = false
+edge_phase_rad = 0.0
+
+[dictionary]
+t1_ms = [750.0, 1250.0]
+t2_ms = [70.0, 90.0]
+mean_diffusivity_mm2_per_s = [0.0007, 0.001]
+fractional_anisotropy = [0.2, 0.7]
+principal_directions_xyz = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
+max_entries = 10000
+max_working_bytes = 268435456
+voxel_batch_size = 256
+
+[comparison]
+# Optional full forward TOMLs, relative to input_directory, with paired NPZ trains.
+flip_optimized_config = ""
+joint_optimized_config = ""
+interleaf_counts = [1, 4, 16]
+noise_std_per_channel = [0.0, 0.001]
+noise_seeds = [2026]
+density_compensation = "radial_increment"
+unit_impulse_gain = true
+reference_image_relative_tolerance = 0.0001
+reference_density_relative_tolerance = 0.0001
+ambiguity_tolerance = 0.0000000001

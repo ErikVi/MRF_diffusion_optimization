@@ -113,10 +113,24 @@ coefficient vector concatenates angle coefficients with sample-count zeros and i
 then split in half. Three actual returned bounds are now plotted and labeled as
 T1/T2/M; no fictional FA/MD columns are generated to satisfy old five-column plots.
 
-The phantom workflow still simulates fixed white/gray tensors instead of using its
+The preserved legacy phantom workflow simulates fixed white/gray tensors instead of using its
 spatial tensor map. Dictionary keys are `[T1,T2,diffusion_scale,shape_scale]`, while
 historical reconstruction assigns their last entries to swapped map names. These
 scale factors are not themselves MD/FA. Some generated phantom tensors are not PSD.
 Optional noise is spatial and broadcast over time; its SD is fixed independently
 of the historical SNR label. No phantom accuracy claim is made. External
 `UEEphase_DH` and original input arrays are required and unavailable here.
+
+## New tensor-phantom recovery path
+
+The forward and quantitative commands use separate, tensor-derived phantom maps
+and the existing tensor signal API. They do not use the historical phantom's
+magnitude dictionary or scale-map assignments. The fitting dictionary samples
+T1/T2 and a restricted valid prolate tensor family. Complex least-squares matching
+selects a tensor; MD and FA are calculated from its eigenvalues. Relative proton
+density and one constant object phase are fitted analytically, with the simulator
+equilibrium parameter held at one. RF phases are part of the same sequence in
+both signal generation and fitting. See [quantitative model](quantitative_undersampling.md)
+for equations, budgets, reconstruction calibration and validation gates. These
+additions preserve the known tensor attenuation defects; agreement between fitting
+and synthesis is model consistency, not independent physics validation.

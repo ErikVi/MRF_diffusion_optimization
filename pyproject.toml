@@ -12,13 +12,16 @@ dependencies = ["jax>=0.4", "numpy", "scipy"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+acquisition = ["sigpy>=0.1.27"]
 experiments = ["matplotlib", "h5py", "sigpy", "tqdm"]
 
 [project.scripts]
 mrf-optimize = "mrf_diffusion.experiments.optimization:main"
 mrf-compare-phases = "mrf_diffusion.experiments.phase_comparison:main"
 mrf-benchmark-splines = "mrf_diffusion.experiments.bspline_benchmark:main"
-mrf-phantom = "mrf_diffusion.experiments.undersampling:main"
+mrf-phantom = "mrf_diffusion.experiments.forward_undersampling:main"
+mrf-compare-undersampling = "mrf_diffusion.experiments.quantitative_undersampling:main"
+mrf-legacy-phantom = "mrf_diffusion.experiments.undersampling:main"
 mrf-inspect-hdf5 = "mrf_diffusion.io.hdf5:main"
 
 [tool.setuptools.packages.find]

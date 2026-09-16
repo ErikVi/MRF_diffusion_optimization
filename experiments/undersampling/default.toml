@@ -1,4 +1,81 @@
+# Forward-only synthetic fixture, not a reproduced optimized sequence.
 # Run: mrf-phantom --config experiments/undersampling/default.toml
-# Omitted settings retain the documented historical defaults; inspect with --dry-run.
 input_directory = "../../data/input"
-output_directory = "../../data/output/undersampling"
+output_directory = "../../data/output/forward_undersampling"
+
+[phantom]
+image_shape = [16, 16]
+tile_shape = [4, 4]
+geometry = "checkerboard"
+t1_ms = [750.0, 1250.0]
+t2_ms = [70.0, 90.0]
+proton_density = [1.0, 0.9]
+# radius_pixels = 7.0 # omitted: full support
+
+[diffusion]
+mean_diffusivity_mm2_per_s = [0.0007, 0.001]
+fractional_anisotropy = [0.2, 0.7]
+principal_directions_xyz = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
+
+[sequence]
+flip_angles_rad = [0.2, 0.3, 0.4, 0.25, 0.5, 0.35, 0.2, 0.45]
+rf_phase_mode = "reference" # none / reference / explicit / optimized
+reference_method = "quadratic"
+reference_fraction = 0.18
+rf_phases_rad = [] # required for explicit mode
+optimized_archive = "" # paired flip_angles_rad/rf_phases_rad NPZ
+
+[sequence.physics]
+echo_time_ms = 4.0
+repetition_time_ms = 15.0
+tensor_preparation_wavevector = 300.0
+tensor_readout_wavevector = 100.0
+preparation_angles = [1.5707963267948966, 3.141592653589793, -1.5707963267948966]
+preparation_rf_phase = 0.0
+initial_longitudinal_magnetization = 1.0
+directions = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
+
+[simulation]
+direction_count = 2
+state_count = 20
+include_inversion = false
+sampling = false
+sampling_offset = 0
+sampling_rate = 32
+
+[trajectory]
+kind = "generated_spiral" # cartesian / supplied_spiral / generated_spiral
+supplied_archive = ""
+layout = "components_first"
+component_order = "xy"
+schedule = "golden" # uniform / reference_arms / golden
+interleaves_per_frame = 1
+angular_increment_rad = 0.19634954084936207
+initial_angle_rad = 0.0
+reference_arm_count = 32
+field_of_view_m = 0.24
+design_matrix_size = 16
+frequency_sampling_factor = 1.0
+acceleration = 4.0
+density_exponent = 6.0
+max_gradient_t_per_m = 0.03
+max_slew_t_per_m_per_s = 150.0
+oversampling = 2.0
+kernel_width = 6.0
+
+[density_compensation]
+method = "none" # none / radial_increment / pipe_menon; reconstruction only
+pipe_menon_iterations = 30
+
+[object_phase]
+enabled = false
+edge_phase_rad = 0.0
+
+[noise]
+enabled = false
+standard_deviation_per_channel = 0.001
+seed = 2026
+
+[reconstruction]
+enabled = true
+representative_frames = [0, 3, 7]
