@@ -1,0 +1,19 @@
+{
+  "coarse": {
+    "family": "sinusoidal",
+    "fraction": 0.7834375,
+    "objective": 1.0586691607419358,
+    "status": "finite",
+    "runtime_seconds": 1.0421989999013022,
+    "projection_rmse_rad": 1.0657871877953173
+  },
+  "final": {
+    "family": "sinusoidal",
+    "fraction": 0.77376953125,
+    "objective": 1.0583866162027582,
+    "status": "finite",
+    "runtime_seconds": 1.1007354999892414,
+    "projection_rmse_rad": 1.081834095891264
+  },
+  "strategy": "fixed angles, local finite-grid refinement in selected family; not joint SLSQP"
+}

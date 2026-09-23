@@ -1,0 +1,3626 @@
+[
+  {
+    "sequence": "initial",
+    "condition": "cartesian_L1_noise0",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.427190746609567e-06,
+          "rmse": 1.1604175789713258e-05,
+          "nrmse": 1.2198038777175067e-05,
+          "bias": -1.5505123933667875e-06
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.872936619306465e-06,
+          "rmse": 1.220282496777898e-05,
+          "nrmse": 1.220282496777898e-05,
+          "bias": -1.6321182470940832e-06
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.981444873912669e-06,
+          "rmse": 1.0972914577398504e-05,
+          "nrmse": 1.2192127308220556e-05,
+          "bias": -1.4689065396394918e-06
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "cartesian_L1_noise0",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.427190746654236e-06,
+          "rmse": 1.1604175789710204e-05,
+          "nrmse": 1.2198038777171857e-05,
+          "bias": -1.5505123932813523e-06
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.872936619378456e-06,
+          "rmse": 1.2202824967794846e-05,
+          "nrmse": 1.2202824967794846e-05,
+          "bias": -1.6321182468642323e-06
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.981444873930016e-06,
+          "rmse": 1.09729145773744e-05,
+          "nrmse": 1.2192127308193775e-05,
+          "bias": -1.4689065396984724e-06
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "cartesian_L1_noise0",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.427190746594822e-06,
+          "rmse": 1.1604175789722616e-05,
+          "nrmse": 1.2198038777184904e-05,
+          "bias": -1.5505123935471987e-06
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.872936619283046e-06,
+          "rmse": 1.2202824967780284e-05,
+          "nrmse": 1.2202824967780284e-05,
+          "bias": -1.6321182471122977e-06
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.981444873906597e-06,
+          "rmse": 1.0972914577416847e-05,
+          "nrmse": 1.2192127308240938e-05,
+          "bias": -1.4689065399820997e-06
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L1_noise0",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 9.21875,
+          "rmse": 13.57847561400027,
+          "nrmse": 0.1684202618908563,
+          "bias": 0.3125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 4.804687500000001e-05,
+          "rmse": 0.00012005857945186592,
+          "nrmse": 0.139096135457923,
+          "bias": -1.5234375000000001e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.04296875,
+          "rmse": 0.14657549249448218,
+          "nrmse": 0.2847334072558876,
+          "bias": 0.02734375
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.10581492598810488,
+          "rmse": 0.13114380909770212,
+          "nrmse": 0.13785531154899403,
+          "bias": 0.07187765674397129
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 9.53125,
+          "rmse": 13.806701271484076,
+          "nrmse": 0.19723858959262966,
+          "bias": 9.53125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 3.2812500000000005e-05,
+          "rmse": 9.921567416492216e-05,
+          "nrmse": 0.1417366773784602,
+          "bias": 3.2812500000000005e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0703125,
+          "rmse": 0.1875,
+          "nrmse": 0.9374999999999997,
+          "bias": 0.0703125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.11180456999180921,
+          "rmse": 0.13439088814071395,
+          "nrmse": 0.13439088814071395,
+          "bias": 0.08861359559156785
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.90625,
+          "rmse": 13.346347815039138,
+          "nrmse": 0.14829275350043486,
+          "bias": -8.90625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.328125e-05,
+          "rmse": 0.00013778379803155378,
+          "nrmse": 0.13778379803155377,
+          "bias": -6.328125e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.015625,
+          "rmse": 0.08838834764831845,
+          "nrmse": 0.12626906806902635,
+          "bias": -0.015625
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.09982528198440054,
+          "rmse": 0.1278142656907248,
+          "nrmse": 0.14201585076747195,
+          "bias": 0.05514171789637474
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L1_noise0",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 9.765625,
+          "rmse": 13.975424859373685,
+          "nrmse": 0.17334381132038412,
+          "bias": 3.046875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.671875e-05,
+          "rmse": 0.00016129359875704925,
+          "nrmse": 0.18686974611590507,
+          "bias": -1.6406250000000002e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.138671875,
+          "rmse": 0.2633171804117612,
+          "nrmse": 0.5115125092994415,
+          "bias": 0.041015625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.1512657563686351,
+          "rmse": 0.1867566219672025,
+          "nrmse": 0.1963142025709051,
+          "bias": 0.09136587956608382
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 12.8125,
+          "rmse": 16.00781059358212,
+          "nrmse": 0.2286830084797446,
+          "bias": 12.8125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.031250000000001e-05,
+          "rmse": 0.00014523687548277815,
+          "nrmse": 0.20748125068968304,
+          "bias": 7.031250000000001e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.1796875,
+          "rmse": 0.29973947020704494,
+          "nrmse": 1.4986973510352242,
+          "bias": 0.1796875
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.13944580327137465,
+          "rmse": 0.17409953770624118,
+          "nrmse": 0.17409953770624118,
+          "bias": 0.09692770137590681
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.71875,
+          "rmse": 11.59202311936963,
+          "nrmse": 0.1288002568818848,
+          "bias": -6.71875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.000103125,
+          "rmse": 0.0001758905909933786,
+          "nrmse": 0.17589059099337861,
+          "bias": -0.000103125
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.09765625,
+          "rmse": 0.2209708691207961,
+          "nrmse": 0.31567267017256584,
+          "bias": -0.09765625
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.1630857094658955,
+          "rmse": 0.19860871750171055,
+          "nrmse": 0.22067635277967834,
+          "bias": 0.08580405775626082
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L1_noise0",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 10.0,
+          "rmse": 14.142135623730951,
+          "nrmse": 0.17541160386140586,
+          "bias": 1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 7.031250000000001e-05,
+          "rmse": 0.00014523687548277815,
+          "nrmse": 0.16826692601120918,
+          "bias": -9.375000000000001e-06
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.134765625,
+          "rmse": 0.25958199571618984,
+          "nrmse": 0.5042566451232381,
+          "bias": 0.021484375
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.14374251852888925,
+          "rmse": 0.18111965734388155,
+          "nrmse": 0.1903887569117841,
+          "bias": 0.09385787168904539
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 11.40625,
+          "rmse": 15.103807466993215,
+          "nrmse": 0.21576867809990308,
+          "bias": 11.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.0937500000000004e-05,
+          "rmse": 0.0001352081728298996,
+          "nrmse": 0.19315453261414228,
+          "bias": 6.0937500000000004e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.15625,
+          "rmse": 0.2795084971874737,
+          "nrmse": 1.3975424859373682,
+          "bias": 0.15625
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.12739152861154307,
+          "rmse": 0.16084438337000392,
+          "nrmse": 0.16084438337000392,
+          "bias": 0.091838081332423
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.59375,
+          "rmse": 13.110110602126895,
+          "nrmse": 0.14566789557918772,
+          "bias": -8.59375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.96875e-05,
+          "rmse": 0.00015461646096066227,
+          "nrmse": 0.15461646096066226,
+          "bias": -7.96875e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.11328125,
+          "rmse": 0.23799290955824715,
+          "nrmse": 0.3399898707974959,
+          "bias": -0.11328125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.1600935084462354,
+          "rmse": 0.19934328403799648,
+          "nrmse": 0.22149253781999603,
+          "bias": 0.09587766204566775
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L4_noise0",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.640625,
+          "rmse": 5.7282196186948,
+          "nrmse": 0.07104982000735063,
+          "bias": -0.703125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 3.5156250000000003e-06,
+          "rmse": 3.247595264191645e-05,
+          "nrmse": 0.03762562849259913,
+          "bias": -3.5156250000000003e-06
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.059359508091958085,
+          "rmse": 0.06926792738353066,
+          "nrmse": 0.07281282872221398,
+          "bias": 0.05734822521743143
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.9375,
+          "rmse": 4.330127018922194,
+          "nrmse": 0.061858957413174195,
+          "bias": 0.9375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06355470735871885,
+          "rmse": 0.07367593107025146,
+          "nrmse": 0.07367593107025146,
+          "bias": 0.061826733694556865
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.34375,
+          "rmse": 6.846531968814577,
+          "nrmse": 0.07607257743127308,
+          "bias": -2.34375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.031250000000001e-06,
+          "rmse": 4.592793267718459e-05,
+          "nrmse": 0.04592793267718459,
+          "bias": -7.031250000000001e-06
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.055164308825197315,
+          "rmse": 0.06455965232985465,
+          "nrmse": 0.07173294703317182,
+          "bias": 0.052869716740305994
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L4_noise0",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 6.796875,
+          "rmse": 11.659223816361019,
+          "nrmse": 0.1446148731578517,
+          "bias": -1.328125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 4.570312500000001e-05,
+          "rmse": 0.00011709371246996998,
+          "nrmse": 0.135661132801625,
+          "bias": -2.2265625e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.00390625,
+          "rmse": 0.04419417382415922,
+          "nrmse": 0.08585035246793063,
+          "bias": 0.00390625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0644979930033226,
+          "rmse": 0.07954212280636964,
+          "nrmse": 0.08361282317620711,
+          "bias": 0.0509963123949573
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 5.46875,
+          "rmse": 10.458250331675945,
+          "nrmse": 0.14940357616679922,
+          "bias": 5.46875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.34375e-05,
+          "rmse": 8.385254915624212e-05,
+          "nrmse": 0.11978935593748873,
+          "bias": 2.34375e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0078125,
+          "rmse": 0.0625,
+          "nrmse": 0.3124999999999999,
+          "bias": 0.0078125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06887770761347453,
+          "rmse": 0.08409941788682897,
+          "nrmse": 0.08409941788682897,
+          "bias": 0.06298488591527113
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.125,
+          "rmse": 12.747548783981962,
+          "nrmse": 0.14163943093313291,
+          "bias": -8.125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.796875e-05,
+          "rmse": 0.0001427957457349483,
+          "nrmse": 0.1427957457349483,
+          "bias": -6.796875e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06011827839317067,
+          "rmse": 0.07470733907845797,
+          "nrmse": 0.08300815453161994,
+          "bias": 0.03900773887464347
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L4_noise0",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 5.859375,
+          "rmse": 10.825317547305483,
+          "nrmse": 0.13427153888239368,
+          "bias": -1.171875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 4.1015625e-05,
+          "rmse": 0.0001109264959331178,
+          "nrmse": 0.12851598756731664,
+          "bias": -1.9921875e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.00390625,
+          "rmse": 0.04419417382415922,
+          "nrmse": 0.08585035246793063,
+          "bias": 0.00390625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.06268963812034667,
+          "rmse": 0.07738780448067752,
+          "nrmse": 0.08134825402873982,
+          "bias": 0.05044536288441559
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 4.6875,
+          "rmse": 9.682458365518542,
+          "nrmse": 0.13832083379312202,
+          "bias": 4.6875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.109375e-05,
+          "rmse": 7.95495128834866e-05,
+          "nrmse": 0.11364216126212369,
+          "bias": 2.109375e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0078125,
+          "rmse": 0.0625,
+          "nrmse": 0.3124999999999999,
+          "bias": 0.0078125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06849371724680306,
+          "rmse": 0.08307634298865622,
+          "nrmse": 0.08307634298865622,
+          "bias": 0.06356019499267251
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.03125,
+          "rmse": 11.858541225631422,
+          "nrmse": 0.13176156917368245,
+          "bias": -7.03125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.0937500000000004e-05,
+          "rmse": 0.0001352081728298996,
+          "nrmse": 0.1352081728298996,
+          "bias": -6.0937500000000004e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.05688555899389029,
+          "rmse": 0.07124651430287865,
+          "nrmse": 0.07916279366986514,
+          "bias": 0.037330530776158666
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L16_noise0",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.9375,
+          "rmse": 4.330127018922194,
+          "nrmse": 0.05370861555295747,
+          "bias": -0.625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.05813124849919117,
+          "rmse": 0.06202404566816589,
+          "nrmse": 0.06519822931743607,
+          "bias": 0.05813124849919117
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.3125,
+          "rmse": 2.5,
+          "nrmse": 0.03571428571428571,
+          "bias": 0.3125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0630560745779474,
+          "rmse": 0.06742112193237444,
+          "nrmse": 0.06742112193237444,
+          "bias": 0.0630560745779474
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.5625,
+          "rmse": 5.5901699437494745,
+          "nrmse": 0.06211299937499416,
+          "bias": -1.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.05320642242043493,
+          "rmse": 0.05611022009824373,
+          "nrmse": 0.06234468899804857,
+          "bias": 0.05320642242043493
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L16_noise0",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.484375,
+          "rmse": 5.448623679425842,
+          "nrmse": 0.06758185919540607,
+          "bias": 0.078125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.054822006028540066,
+          "rmse": 0.06051573292340116,
+          "nrmse": 0.06361272616045552,
+          "bias": 0.054577119245240016
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.5625,
+          "rmse": 5.5901699437494745,
+          "nrmse": 0.07985957062499249,
+          "bias": 1.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0629621656750588,
+          "rmse": 0.0681378842725665,
+          "nrmse": 0.0681378842725665,
+          "bias": 0.0629621656750588
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.40625,
+          "rmse": 5.303300858899107,
+          "nrmse": 0.05892556509887896,
+          "bias": -1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.04668184638202133,
+          "rmse": 0.051783555202121564,
+          "nrmse": 0.057537283557912836,
+          "bias": 0.046192072815421224
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L16_noise0",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.0,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.328125,
+          "rmse": 5.153882032022076,
+          "nrmse": 0.06392603899459486,
+          "bias": -0.078125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.054723338054156544,
+          "rmse": 0.06031327248927244,
+          "nrmse": 0.06339990447702885,
+          "bias": 0.05456469651688832
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.25,
+          "rmse": 5.0,
+          "nrmse": 0.07142857142857142,
+          "bias": 1.25
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06263436254509841,
+          "rmse": 0.06801024757892211,
+          "nrmse": 0.06801024757892211,
+          "bias": 0.06263436254509841
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.40625,
+          "rmse": 5.303300858899107,
+          "nrmse": 0.05892556509887896,
+          "bias": -1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.046812313563214684,
+          "rmse": 0.05147803318877068,
+          "nrmse": 0.057197814654189626,
+          "bias": 0.04649503048867823
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "cartesian_L1_noise0.001",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0013216015132671488,
+          "rmse": 0.0016609217385913624,
+          "nrmse": 0.0017459221697718782,
+          "bias": 7.032236599239811e-05
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0014419960731287956,
+          "rmse": 0.001805142025568349,
+          "nrmse": 0.001805142025568349,
+          "bias": 5.7867089834778146e-05
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.001201206953405502,
+          "rmse": 0.0015029252512941908,
+          "nrmse": 0.0016699169458824338,
+          "bias": 8.277764215001808e-05
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "cartesian_L1_noise0.001",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0011262997324084437,
+          "rmse": 0.0014193261714758685,
+          "nrmse": 0.0014919625478674243,
+          "bias": 4.698486471029894e-05
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0011892939103914871,
+          "rmse": 0.0014812502855540948,
+          "nrmse": 0.0014812502855540948,
+          "bias": -1.6033613141220454e-06
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0010633055544254002,
+          "rmse": 0.001354574159512356,
+          "nrmse": 0.0015050823994581727,
+          "bias": 9.557309073471992e-05
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "cartesian_L1_noise0.001",
+    "sampling": "cartesian",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.000989155080863672,
+          "rmse": 0.0012702943784523935,
+          "nrmse": 0.0013353038050772828,
+          "bias": -1.260643581042515e-05
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0009264692767561155,
+          "rmse": 0.001156575784662039,
+          "nrmse": 0.001156575784662039,
+          "bias": -5.22090299357441e-05
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0010518408849712283,
+          "rmse": 0.001374637432266739,
+          "nrmse": 0.0015273749247408208,
+          "bias": 2.6996158314893798e-05
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L1_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.828125,
+          "rmse": 13.287682265918312,
+          "nrmse": 0.164813414315891,
+          "bias": 0.390625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 4.8046875e-05,
+          "rmse": 0.00012005857945186592,
+          "nrmse": 0.139096135457923,
+          "bias": -1.5234375000000001e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.044921875,
+          "rmse": 0.14986973510352247,
+          "nrmse": 0.2911327098025591,
+          "bias": 0.029296875
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.10547660883627552,
+          "rmse": 0.13079985555723772,
+          "nrmse": 0.13749375561428898,
+          "bias": 0.07154404399564246
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 9.21875,
+          "rmse": 13.57847561400027,
+          "nrmse": 0.1939782230571467,
+          "bias": 9.21875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 3.2812500000000005e-05,
+          "rmse": 9.921567416492216e-05,
+          "nrmse": 0.1417366773784602,
+          "bias": 3.2812500000000005e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.07421875,
+          "rmse": 0.1926379375927805,
+          "nrmse": 0.9631896879639021,
+          "bias": 0.07421875
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.11263462779948802,
+          "rmse": 0.13513708366853988,
+          "nrmse": 0.13513708366853988,
+          "bias": 0.08929993039861522
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.4375,
+          "rmse": 12.99038105676658,
+          "nrmse": 0.14433756729740643,
+          "bias": -8.4375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.328125e-05,
+          "rmse": 0.00013778379803155378,
+          "nrmse": 0.13778379803155377,
+          "bias": -6.328125e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.015625,
+          "rmse": 0.08838834764831845,
+          "nrmse": 0.12626906806902635,
+          "bias": -0.015625
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.09831858987306302,
+          "rmse": 0.1263137880247068,
+          "nrmse": 0.1403486533607853,
+          "bias": 0.053788157592669666
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L1_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 9.84375,
+          "rmse": 14.031215200402281,
+          "nrmse": 0.17403580533459645,
+          "bias": 2.5
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 8.3203125e-05,
+          "rmse": 0.00015799030824705673,
+          "nrmse": 0.18304265648738746,
+          "bias": -1.5234375000000003e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.138671875,
+          "rmse": 0.2633171804117612,
+          "nrmse": 0.5115125092994415,
+          "bias": 0.044921875
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.15190624092265742,
+          "rmse": 0.1881665613201929,
+          "nrmse": 0.19779629791424588,
+          "bias": 0.09268685821851089
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 12.34375,
+          "rmse": 15.712256362470669,
+          "nrmse": 0.2244608051781524,
+          "bias": 12.34375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.796875e-05,
+          "rmse": 0.0001427957457349483,
+          "nrmse": 0.20399392247849754,
+          "bias": 6.796875e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.18359375,
+          "rmse": 0.3029799910885206,
+          "nrmse": 1.5148999554426024,
+          "bias": 0.18359375
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.1383906309434139,
+          "rmse": 0.17328557026247043,
+          "nrmse": 0.17328557026247043,
+          "bias": 0.09677622755540317
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.34375,
+          "rmse": 12.119199643540822,
+          "nrmse": 0.13465777381712024,
+          "bias": -7.34375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 9.84375e-05,
+          "rmse": 0.00017184658856084402,
+          "nrmse": 0.171846588560844,
+          "bias": -9.84375e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.09375,
+          "rmse": 0.21650635094610965,
+          "nrmse": 0.3092947870658709,
+          "bias": -0.09375
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.16542185090190098,
+          "rmse": 0.2019540064889584,
+          "nrmse": 0.22439334054328705,
+          "bias": 0.08859748888161861
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L1_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 1,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 10.15625,
+          "rmse": 14.252192813739224,
+          "nrmse": 0.1767766952966369,
+          "bias": 1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 7.500000000000001e-05,
+          "rmse": 0.00015000000000000001,
+          "nrmse": 0.17378533390904768,
+          "bias": -7.0312500000000015e-06
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.130859375,
+          "rmse": 0.2557922741210141,
+          "nrmse": 0.49689483910790966,
+          "bias": 0.025390625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.1450022272920498,
+          "rmse": 0.18230663617533546,
+          "nrmse": 0.1916364813582369,
+          "bias": 0.09408297757496724
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 11.5625,
+          "rmse": 15.20690632574555,
+          "nrmse": 0.21724151893922214,
+          "bias": 11.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.796875000000001e-05,
+          "rmse": 0.0001427957457349483,
+          "nrmse": 0.20399392247849754,
+          "bias": 6.796875000000001e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.15625,
+          "rmse": 0.2795084971874737,
+          "nrmse": 1.3975424859373682,
+          "bias": 0.15625
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.1295499054647598,
+          "rmse": 0.1626424712142434,
+          "nrmse": 0.1626424712142434,
+          "bias": 0.09410704810343601
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.75,
+          "rmse": 13.228756555322953,
+          "nrmse": 0.1469861839480328,
+          "bias": -8.75
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.203124999999999e-05,
+          "rmse": 0.00015687375497513918,
+          "nrmse": 0.15687375497513917,
+          "bias": -8.203124999999999e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.10546875,
+          "rmse": 0.22963966338592295,
+          "nrmse": 0.3280566619798899,
+          "bias": -0.10546875
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.16045454911933976,
+          "rmse": 0.20004710881303997,
+          "nrmse": 0.22227456534782214,
+          "bias": 0.0940589070464985
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L4_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.484375,
+          "rmse": 5.448623679425842,
+          "nrmse": 0.06758185919540607,
+          "bias": -0.703125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 2.3437500000000002e-06,
+          "rmse": 2.6516504294495534e-05,
+          "nrmse": 0.03072119701946402,
+          "bias": -2.3437500000000002e-06
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.05921076582233477,
+          "rmse": 0.06918611554370613,
+          "nrmse": 0.0727268300254779,
+          "bias": 0.057758617870417917
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.78125,
+          "rmse": 3.952847075210474,
+          "nrmse": 0.0564692439315782,
+          "bias": 0.78125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06379732240434541,
+          "rmse": 0.0739081753030797,
+          "nrmse": 0.0739081753030797,
+          "bias": 0.06199968919639434
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.1875,
+          "rmse": 6.614378277661476,
+          "nrmse": 0.0734930919740164,
+          "bias": -2.1875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 4.6875000000000004e-06,
+          "rmse": 3.7500000000000003e-05,
+          "nrmse": 0.037500000000000006,
+          "bias": -4.6875000000000004e-06
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.054624209240324115,
+          "rmse": 0.06411722694739182,
+          "nrmse": 0.07124136327487977,
+          "bias": 0.05351754654444149
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L4_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 6.875,
+          "rmse": 11.726039399558575,
+          "nrmse": 0.14544361847068493,
+          "bias": -1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 5.15625e-05,
+          "rmse": 0.00012437342963832752,
+          "nrmse": 0.14409518666073462,
+          "bias": -2.8125e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.00390625,
+          "rmse": 0.04419417382415922,
+          "nrmse": 0.08585035246793063,
+          "bias": 0.00390625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.06386142215768538,
+          "rmse": 0.07893164074214809,
+          "nrmse": 0.0829710986774499,
+          "bias": 0.0492619069379156
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 5.46875,
+          "rmse": 10.458250331675945,
+          "nrmse": 0.14940357616679922,
+          "bias": 5.46875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.34375e-05,
+          "rmse": 8.385254915624212e-05,
+          "nrmse": 0.11978935593748873,
+          "bias": 2.34375e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0078125,
+          "rmse": 0.0625,
+          "nrmse": 0.3124999999999999,
+          "bias": 0.0078125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06888499339356821,
+          "rmse": 0.084105904004154,
+          "nrmse": 0.084105904004154,
+          "bias": 0.06294213798610299
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 8.28125,
+          "rmse": 12.869537676233751,
+          "nrmse": 0.1429948630692639,
+          "bias": -8.28125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 7.96875e-05,
+          "rmse": 0.00015461646096066227,
+          "nrmse": 0.15461646096066226,
+          "bias": -7.96875e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.05883785092180256,
+          "rmse": 0.07339349243726652,
+          "nrmse": 0.08154832493029611,
+          "bias": 0.035581675889728215
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L4_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 4,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 5.703125,
+          "rmse": 10.680004681646913,
+          "nrmse": 0.13246915460995787,
+          "bias": -0.859375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 3.8671875e-05,
+          "rmse": 0.00010771054962258804,
+          "nrmse": 0.12479009221125674,
+          "bias": -1.7578125000000002e-05
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.00390625,
+          "rmse": 0.04419417382415922,
+          "nrmse": 0.08585035246793063,
+          "bias": 0.00390625
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.062460139504937034,
+          "rmse": 0.07732055312709127,
+          "nrmse": 0.08127756097533144,
+          "bias": 0.050591521214816984
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 4.84375,
+          "rmse": 9.842509842514763,
+          "nrmse": 0.1406072834644966,
+          "bias": 4.84375
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 2.109375e-05,
+          "rmse": 7.95495128834866e-05,
+          "nrmse": 0.11364216126212369,
+          "bias": 2.109375e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0078125,
+          "rmse": 0.0625,
+          "nrmse": 0.3124999999999999,
+          "bias": 0.0078125
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06854582587816709,
+          "rmse": 0.08328788925555818,
+          "nrmse": 0.08328788925555818,
+          "bias": 0.06323868948377454
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 6.5625,
+          "rmse": 11.4564392373896,
+          "nrmse": 0.12729376930432887,
+          "bias": -6.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 5.6250000000000005e-05,
+          "rmse": 0.0001299038105676658,
+          "nrmse": 0.1299038105676658,
+          "bias": -5.6250000000000005e-05
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.056374453131707,
+          "rmse": 0.07085240557040079,
+          "nrmse": 0.07872489507822308,
+          "bias": 0.037944352945859426
+        }
+      }
+    }
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L16_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.015625,
+          "rmse": 4.5069390943299865,
+          "nrmse": 0.05590169943749475,
+          "bias": -0.703125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.058382248819033034,
+          "rmse": 0.06224920402263742,
+          "nrmse": 0.06543491052501338,
+          "bias": 0.058382248819033034
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.3125,
+          "rmse": 2.5,
+          "nrmse": 0.03571428571428571,
+          "bias": 0.3125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06322136501537591,
+          "rmse": 0.06756534205605931,
+          "nrmse": 0.06756534205605931,
+          "bias": 0.06322136501537591
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.71875,
+          "rmse": 5.863019699779287,
+          "nrmse": 0.06514466333088097,
+          "bias": -1.71875
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.05354313262269014,
+          "rmse": 0.05643448729058839,
+          "nrmse": 0.06270498587843153,
+          "bias": 0.05354313262269014
+        }
+      }
+    }
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L16_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.40625,
+          "rmse": 5.303300858899107,
+          "nrmse": 0.0657793514480272,
+          "bias": 0.15625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.05482346075399104,
+          "rmse": 0.0605678020089525,
+          "nrmse": 0.06366745996802248,
+          "bias": 0.05458299208512882
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.5625,
+          "rmse": 5.5901699437494745,
+          "nrmse": 0.07985957062499249,
+          "bias": 1.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06314317064717603,
+          "rmse": 0.06833368505737808,
+          "nrmse": 0.06833368505737808,
+          "bias": 0.06314317064717603
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.25,
+          "rmse": 5.0,
+          "nrmse": 0.05555555555555555,
+          "bias": -1.25
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.046503750860806034,
+          "rmse": 0.0516471177014788,
+          "nrmse": 0.05738568633497643,
+          "bias": 0.04602281352308158
+        }
+      }
+    }
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L16_noise0.001",
+    "sampling": "spiral",
+    "interleaves": 16,
+    "noise": 0.001,
+    "ambiguous": 0,
+    "metrics": {
+      "all": {
+        "t1_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 1.484375,
+          "rmse": 5.448623679425842,
+          "nrmse": 0.06758185919540607,
+          "bias": 0.078125
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 256,
+          "valid_voxels": 256,
+          "invalid_voxels": 0,
+          "mae": 0.0544522029905159,
+          "rmse": 0.059841939294797204,
+          "nrmse": 0.06290445002275599,
+          "bias": 0.05427101380878038
+        }
+      },
+      "region_0": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.5625,
+          "rmse": 5.5901699437494745,
+          "nrmse": 0.07985957062499249,
+          "bias": 1.5625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.06207333211460566,
+          "rmse": 0.06702568001773404,
+          "nrmse": 0.06702568001773404,
+          "bias": 0.06207333211460566
+        }
+      },
+      "region_1": {
+        "t1_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "t2_ms": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 1.40625,
+          "rmse": 5.303300858899107,
+          "nrmse": 0.05892556509887896,
+          "bias": -1.40625
+        },
+        "md_mm2_per_s": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "fa": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.0,
+          "rmse": 0.0,
+          "nrmse": 0.0,
+          "bias": 0.0
+        },
+        "proton_density": {
+          "requested_voxels": 128,
+          "valid_voxels": 128,
+          "invalid_voxels": 0,
+          "mae": 0.04683107386642613,
+          "rmse": 0.051668884401394964,
+          "nrmse": 0.0574098715571055,
+          "bias": 0.0464686955029551
+        }
+      }
+    }
+  }
+]

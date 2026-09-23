@@ -1,0 +1,71 @@
+{
+  "initial": {
+    "passed": true,
+    "checks": {
+      "dictionary_self_match": true,
+      "direct_valid": true,
+      "reconstructed_valid": true,
+      "image_consistency": true,
+      "direct_t1_ms": true,
+      "recovered_t1_ms": true,
+      "direct_t2_ms": true,
+      "recovered_t2_ms": true,
+      "direct_md_mm2_per_s": true,
+      "recovered_md_mm2_per_s": true,
+      "direct_fa": true,
+      "recovered_fa": true,
+      "direct_proton_density": true,
+      "recovered_proton_density": true,
+      "object_phase": true
+    },
+    "image_relative_error": 1.2197824743810276e-05,
+    "minimum_dictionary_correlation_margin": 0.0005607276513016624,
+    "maximum_reference_phase_error_rad": 6.661338147750939e-16
+  },
+  "flip_only": {
+    "passed": true,
+    "checks": {
+      "dictionary_self_match": true,
+      "direct_valid": true,
+      "reconstructed_valid": true,
+      "image_consistency": true,
+      "direct_t1_ms": true,
+      "recovered_t1_ms": true,
+      "direct_t2_ms": true,
+      "recovered_t2_ms": true,
+      "direct_md_mm2_per_s": true,
+      "recovered_md_mm2_per_s": true,
+      "direct_fa": true,
+      "recovered_fa": true,
+      "direct_proton_density": true,
+      "recovered_proton_density": true,
+      "object_phase": true
+    },
+    "image_relative_error": 1.2198348407483227e-05,
+    "minimum_dictionary_correlation_margin": 0.000555474660473676,
+    "maximum_reference_phase_error_rad": 5.551115123125783e-16
+  },
+  "final": {
+    "passed": true,
+    "checks": {
+      "dictionary_self_match": true,
+      "direct_valid": true,
+      "reconstructed_valid": true,
+      "image_consistency": true,
+      "direct_t1_ms": true,
+      "recovered_t1_ms": true,
+      "direct_t2_ms": true,
+      "recovered_t2_ms": true,
+      "direct_md_mm2_per_s": true,
+      "recovered_md_mm2_per_s": true,
+      "direct_fa": true,
+      "recovered_fa": true,
+      "direct_proton_density": true,
+      "recovered_proton_density": true,
+      "object_phase": true
+    },
+    "image_relative_error": 1.2198322542988355e-05,
+    "minimum_dictionary_correlation_margin": 0.0004162890298541333,
+    "maximum_reference_phase_error_rad": 1.2212453270876722e-15
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "axis_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "entries_upper_bound": 32,
+  "frames": 120,
+  "signal_bytes": 61440,
+  "estimated_host_working_bytes": 647168,
+  "amplitude_samples": 0,
+  "amplitude_handling": "analytic complex least squares"
+}

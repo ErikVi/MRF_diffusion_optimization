@@ -1,0 +1,74 @@
+[
+  {
+    "sequence": "initial",
+    "condition": "cartesian_L1_noise0.001",
+    "paired_noise_max_difference": 0.0,
+    "rms_signal_over_rms_noise": 38.95067121786263
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "cartesian_L1_noise0.001",
+    "paired_noise_max_difference": 2.220446049250313e-16,
+    "rms_signal_over_rms_noise": 44.734138418502226
+  },
+  {
+    "sequence": "final",
+    "condition": "cartesian_L1_noise0.001",
+    "paired_noise_max_difference": 2.482534153247273e-16,
+    "rms_signal_over_rms_noise": 46.63845039545341
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L1_noise0.001",
+    "paired_noise_max_difference": 0.0,
+    "rms_signal_over_rms_noise": 232.78941699799472
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L1_noise0.001",
+    "paired_noise_max_difference": 2.482534153247273e-16,
+    "rms_signal_over_rms_noise": 268.77104004671486
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L1_noise0.001",
+    "paired_noise_max_difference": 2.482534153247273e-16,
+    "rms_signal_over_rms_noise": 280.84128932434027
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L4_noise0.001",
+    "paired_noise_max_difference": 0.0,
+    "rms_signal_over_rms_noise": 234.14398619807668
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L4_noise0.001",
+    "paired_noise_max_difference": 2.482534153247273e-16,
+    "rms_signal_over_rms_noise": 270.26647450441396
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L4_noise0.001",
+    "paired_noise_max_difference": 3.1401849173675503e-16,
+    "rms_signal_over_rms_noise": 282.42058077173937
+  },
+  {
+    "sequence": "initial",
+    "condition": "spiral_L16_noise0.001",
+    "paired_noise_max_difference": 0.0,
+    "rms_signal_over_rms_noise": 234.88040919451822
+  },
+  {
+    "sequence": "flip_only",
+    "condition": "spiral_L16_noise0.001",
+    "paired_noise_max_difference": 2.482534153247273e-16,
+    "rms_signal_over_rms_noise": 271.1479648775051
+  },
+  {
+    "sequence": "final",
+    "condition": "spiral_L16_noise0.001",
+    "paired_noise_max_difference": 3.1401849173675503e-16,
+    "rms_signal_over_rms_noise": 283.33558458876905
+  }
+]

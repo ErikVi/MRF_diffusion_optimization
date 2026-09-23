@@ -6,4 +6,8 @@ build/
 dist/
 data/output/*
 !data/output/README.md
+# Preserve the completed scientific worked example; other runs stay ignored.
+!data/output/complete_worked_example/
+data/output/complete_worked_example/*
+!data/output/complete_worked_example/full/
 data/input/**/*.npy

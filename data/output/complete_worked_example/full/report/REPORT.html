@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Complete diffusion-MRF example</title><style>body{max-width:1200px;margin:40px auto;font:17px/1.55 system-ui;color:#172536;padding:20px}img{max-width:100%}table{border-collapse:collapse;font-size:14px}td{border:1px solid #ccd;padding:7px}tr:first-child{background:#e9eef5;font-weight:bold}figure{margin:24px 0}h2{margin-top:45px}figcaption{color:#536477}</style><body><h1>Complete diffusion-MRF optimization example</h1>
+<h2>1. Objective</h2>
+<p>This full run tests a sequential worked example: educated initialization, flip-angle optimization, phase-family selection/refinement, and identical phantom acquisition/recovery. This is not the previous joint-optimization run. Smoke results are orchestration checks only; full results are the practical scientific example.</p>
+<p>Execution evidence: {&quot;passed&quot;: 178, &quot;failures&quot;: 0, &quot;skipped_or_expected_failures&quot;: 9, &quot;source&quot;: &quot;C:\\Users\\visna\\Documents\\Codex\\2026-09-09\\are\\work\\MRF_diffusion_optimization\\data\\output\\complete_worked_example\\test_suite.xml&quot;}. Backend: cpu; computation before reporting: 499.71 seconds. Source snapshot, configuration, versions and raw numerical arrays accompany this report.</p>
+<h2>2. Starting sequence</h2>
+<p>The thesis used a truncated Sommer train (section 5.2.2), whose input array is missing. Here the target is 0.25 + 0.15 sin²(pi*n/(N-1)) radians, N=40, fitted by the existing cubic initializer. It starts at zero RF phase. This smooth bounded arch is an educated example, not a fabricated historical three-arch train. Actual decoded arrays and target/projection are saved.</p>
+<figure><img src="../01_initial_sequence/initial_flip_angles.png" alt="initial flip angles"><figcaption>initial flip angles</figcaption></figure>
+<figure><img src="../01_initial_sequence/initial_rf_phases.png" alt="initial rf phases"><figcaption>initial rf phases</figcaption></figure>
+<figure><img src="../01_initial_sequence/initial_sequence_overview.png" alt="initial sequence overview"><figcaption>initial sequence overview</figcaption></figure>
+<h2>3. Initial theoretical performance</h2>
+<p>Baseline evaluation occurred before SLSQP. Each stage saves raw J/F/covariance/CRLB. Conditional objective bounds are tissue-weighted relative SD for T1,T2,internal M. Separate fixed-orientation finite-difference diagnostics use T1,T2,external density,MD,FA,object phase at each tissue. The diagnostic plot/summary uses tissue 0. These estimands and normalizations must not be conflated.</p>
+<h2>4. Flip-angle optimization</h2>
+<p>SLSQP optimized 7 angle coefficients with zero phase. Constraints: pi/18 to pi/3 radians, adjacent step &lt;=0.02 rad, coefficients within +/-1000. Unchanged weighted L1 relative-SD objective, equal tissue weights, default ftol=1e-6. Status: Optimization terminated successfully; 9 iterations, 10 evaluations, 96.32 s including compilation. Minimum constraint residual -9.06e-12. Nonconverged smoke iterates are retained and explicitly labeled.</p>
+<figure><img src="../02_flip_angle_optimization/flip_angle_optimization.png" alt="flip angle optimization"><figcaption>flip angle optimization</figcaption></figure>
+<figure><img src="../02_flip_angle_optimization/optimization_history.png" alt="history"><figcaption>history</figcaption></figure>
+<figure><img src="../02_flip_angle_optimization/initial_vs_flip_information.png" alt="initial vs flip information"><figcaption>initial vs flip information</figcaption></figure>
+<h2>5. Phase-modulation strategies</h2>
+<p>Tested zero phase, cumulative piecewise quadratic, cumulative piecewise linear, sinusoidal and alternating generators. Their historical degree amplitudes are converted to radians and projected into the same cubic phase spline. Generated and applied arrays/projection errors are saved. Generator quadratic is different from the double-integrated spline decoder. The discontinuous malleable decoder and unrestricted free-form optimization were not used as extra generator families.</p>
+<figure><img src="../03_phase_method_comparison/phase_candidates_raw_and_applied.png" alt="phase candidates"><figcaption>phase candidates</figcaption></figure>
+<h2>6. Phase-method comparison</h2>
+<p>Before phantom simulation, selection_rule.json fixes minimum established objective as the criterion. All angle coefficients, tissues, timing and directions remain fixed. 33 fractions span the configured interval for each nonzero family. No image-domain outcome is used in selection. Exact ties retain the first configured candidate. The table includes diagnostic bounds but these do not select the winner.</p>
+<table>
+<tr><td>Stage</td><td>Objective</td><td>conditional T1</td><td>conditional T2</td><td>internal M</td><td>diagnostic MD</td><td>diagnostic FA</td></tr>
+<tr><td>initial</td><td>1.29862</td><td>0.448955</td><td>0.364881</td><td>0.484781</td><td>1.23641</td><td>1.30352</td></tr>
+<tr><td>flip_only</td><td>1.12961</td><td>0.412148</td><td>0.281042</td><td>0.436416</td><td>0.820358</td><td>0.911571</td></tr>
+<tr><td>candidate_none</td><td>1.12961</td><td>0.412148</td><td>0.281042</td><td>0.436416</td><td>0.820358</td><td>0.911571</td></tr>
+<tr><td>candidate_quadratic</td><td>1.08902</td><td>0.401364</td><td>0.263301</td><td>0.424357</td><td>0.842945</td><td>0.922246</td></tr>
+<tr><td>candidate_linear</td><td>1.12014</td><td>0.411892</td><td>0.272086</td><td>0.436164</td><td>0.828013</td><td>0.915434</td></tr>
+<tr><td>candidate_sinusoidal</td><td>1.05867</td><td>0.396132</td><td>0.246517</td><td>0.41602</td><td>0.928729</td><td>0.989073</td></tr>
+<tr><td>candidate_alternating</td><td>1.10139</td><td>0.413953</td><td>0.250143</td><td>0.437294</td><td>0.829106</td><td>0.907097</td></tr>
+<tr><td>final</td><td>1.05839</td><td>0.396688</td><td>0.245012</td><td>0.416687</td><td>0.921493</td><td>0.982596</td></tr>
+</table>
+<figure><img src="../03_phase_method_comparison/phase_method_objectives.png" alt="phase objectives"><figcaption>phase objectives</figcaption></figure>
+<figure><img src="../03_phase_method_comparison/phase_fraction_search.png" alt="phase scan"><figcaption>phase scan</figcaption></figure>
+<figure><img src="../03_phase_method_comparison/phase_method_information.png" alt="phase method information"><figcaption>phase method information</figcaption></figure>
+<figure><img src="../03_phase_method_comparison/phase_candidate_complex_signals.png" alt="candidate signals"><figcaption>candidate signals</figcaption></figure>
+<h2>7. Selected phase method</h2>
+<p>Selected sinusoidal at fraction 0.7834375, objective 1.05866916. The selected family was refined locally using the configured denser grid including the original winning fraction. Final fraction 0.77376953; objective 1.05838662. Selection and refinement were completed before phantom generation. This is a bounded search result, not proof of the globally best phase method.</p>
+<h2>8. Final optimized sequence</h2>
+<p>Flip angles equal the flip-only optimum exactly. Final RF phase is the selected historical family&#x27;s refined spline projection. The workflow is sequential flip-angle SLSQP followed by phase-family fraction search; no unreported joint optimization or post-simulation RF phase rotation is applied.</p>
+<figure><img src="../04_final_sequence/initial_vs_final_flip_angles.png" alt="initial vs final flip angles"><figcaption>initial vs final flip angles</figcaption></figure>
+<figure><img src="../04_final_sequence/initial_vs_final_rf_phases.png" alt="initial vs final rf phases"><figcaption>initial vs final rf phases</figcaption></figure>
+<figure><img src="../04_final_sequence/final_sequence_overview.png" alt="final sequence overview"><figcaption>final sequence overview</figcaption></figure>
+<h2>9. Theoretical improvement</h2>
+<p>Established objective changes 1.2986159 -&gt; 1.12960518 -&gt; 1.05838662, a 18.50% reduction from initialization. This objective omits diffusion uncertainty (I02). Separate MD/FA diagnostics differentiate the valid tensor parameterization and verify step-halving; they do not correct the diffusion signal model. Local bounds do not predict nonlinear aliasing/matching bias.</p>
+<figure><img src="../05_information_validation/three_stage_information.png" alt="three stage information"><figcaption>three stage information</figcaption></figure>
+<figure><img src="../05_information_validation/information_and_objective_progression.png" alt="progression"><figcaption>progression</figcaption></figure>
+<h2>10. Signal behaviour</h2>
+<p>All curves use the actual RF trains and the same two tissue/tensor configurations. Signal phase is shown wrapped; direction blocks are concatenated, independently initialized, not presented as a continuous acquisition clock. Doubled-state checks on two dictionary endpoints per sequence are saved separately. Complex temporal phase is preserved throughout.</p>
+<figure><img src="../06_signal_validation/representative_complex_fingerprints.png" alt="fingerprints"><figcaption>fingerprints</figcaption></figure>
+<h2>11. Phantom</h2>
+<p>[16, 16] checkerboard, two compartments: T1 750/1250 ms, T2 70/90 ms, density 1/0.9, MD 0.0007/0.001 mm²/s, FA 0.2/0.7, principal axes x/y. The prolate family has a=FA/sqrt(3-2FA²), eigenvalues MD*(1+2a), MD*(1-a), MD*(1-a). Tensor invariants reproduce requested values. Object phase is a separate fixed quadratic spatial field. Identical tissue signals are simulated once per unique tuple.</p>
+<figure><img src="../07_phantom/ground_truth_parameter_maps.png" alt="phantom"><figcaption>phantom</figcaption></figure>
+<h2>12. Reference reconstruction</h2>
+<p>All three sequences pass dictionary self-matching, direct phantom matching and noiseless Cartesian forward/adjoint/matching before spiral acquisition. The unchanged complex-image relative tolerance is 1e-4; discrete T1/T2/MD/FA reference recovery must be exact to roundoff. This is on-grid consistency, not general tissue-estimation validation.</p>
+<table>
+<tr><td>Sequence</td><td>Passed</td><td>Image relative error</td><td>Minimum dictionary margin</td></tr>
+<tr><td>initial</td><td>True</td><td>1.21978e-05</td><td>0.000560728</td></tr>
+<tr><td>flip_only</td><td>True</td><td>1.21983e-05</td><td>0.000555475</td></tr>
+<tr><td>final</td><td>True</td><td>1.21983e-05</td><td>0.000416289</td></tr>
+</table>
+<h2>13. Undersampling</h2>
+<p>Generated variable-density spiral with golden-angle schedule, interleaves [1, 4, 16]. Coordinates are (ky,kx) cycles/pixel, converted by the validated SigPy operator. Forward samples are unweighted. Reconstruction uses radial-increment DCF and operator-only central impulse gain, not phantom truth scaling. No scanner gradient/readout-time certification is implied. Noise levels [0.0, 0.001] are absolute Gaussian SD per real/imaginary k-space channel, seed 2026. Noiseless conditions run first. Paired-noise checks and measured signal-RMS/noise-RMS ratios are saved; fixed noise does not mean identical SNR for different signals.</p>
+<figure><img src="../08_acquisition/sampling_trajectory_examples.png" alt="trajectories"><figcaption>trajectories</figcaption></figure>
+<figure><img src="../08_acquisition/representative_kspace_magnitude.png" alt="kspace"><figcaption>kspace</figcaption></figure>
+<figure><img src="../09_reconstruction/representative_complex_adjoint_frames.png" alt="frames"><figcaption>frames</figcaption></figure>
+<h2>14. Quantitative reconstruction</h2>
+<p>Dictionary axes are independent T1 x T2 x MD x FA x orientation: 2^5=32 atoms, identical grid for all sequences. The saved budget guards memory before generation. Density and constant object phase are analytic complex least-squares estimates, with one scalar over the entire fingerprint. Maps derive from the selected valid tensor. All noiseless sampling levels appear below with identical parameter and signed-error scales across sequences and conditions. MD figure units are 10^-3 mm²/s; CSV units remain mm²/s.</p>
+<figure><img src="../10_parameter_maps/t1_ms_recovery_and_errors.png" alt="t1 ms maps"><figcaption>t1 ms maps</figcaption></figure>
+<figure><img src="../10_parameter_maps/t2_ms_recovery_and_errors.png" alt="t2 ms maps"><figcaption>t2 ms maps</figcaption></figure>
+<figure><img src="../10_parameter_maps/md_mm2_per_s_recovery_and_errors.png" alt="md mm2 per s maps"><figcaption>md mm2 per s maps</figcaption></figure>
+<figure><img src="../10_parameter_maps/fa_recovery_and_errors.png" alt="fa maps"><figcaption>fa maps</figcaption></figure>
+<figure><img src="../10_parameter_maps/proton_density_recovery_and_errors.png" alt="proton density maps"><figcaption>proton density maps</figcaption></figure>
+<h2>15. Initial versus optimized sequence</h2>
+<p>Global RMSE in native units is listed below. The master reconstruction_metrics.csv also includes MAE, RMSE, NRMSE=RMSE/RMS(truth), bias, valid/invalid voxel counts and compartment-level metrics for every sequence, sampling and noise condition.</p>
+<table>
+<tr><td>Sampling</td><td>Noise SD</td><td>Parameter</td><td>Initial RMSE</td><td>Flip-only RMSE</td><td>Final RMSE</td></tr>
+<tr><td>cartesian_L1_noise0</td><td>0</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0</td><td>0</td><td>t2_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0</td><td>0</td><td>md_mm2_per_s</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0</td><td>0</td><td>fa</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0</td><td>0</td><td>proton_density</td><td>1.16042e-05</td><td>1.16042e-05</td><td>1.16042e-05</td></tr>
+<tr><td>spiral_L1_noise0</td><td>0</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L1_noise0</td><td>0</td><td>t2_ms</td><td>13.5785</td><td>13.9754</td><td>14.1421</td></tr>
+<tr><td>spiral_L1_noise0</td><td>0</td><td>md_mm2_per_s</td><td>0.000120059</td><td>0.000161294</td><td>0.000145237</td></tr>
+<tr><td>spiral_L1_noise0</td><td>0</td><td>fa</td><td>0.146575</td><td>0.263317</td><td>0.259582</td></tr>
+<tr><td>spiral_L1_noise0</td><td>0</td><td>proton_density</td><td>0.131144</td><td>0.186757</td><td>0.18112</td></tr>
+<tr><td>spiral_L4_noise0</td><td>0</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L4_noise0</td><td>0</td><td>t2_ms</td><td>5.72822</td><td>11.6592</td><td>10.8253</td></tr>
+<tr><td>spiral_L4_noise0</td><td>0</td><td>md_mm2_per_s</td><td>3.2476e-05</td><td>0.000117094</td><td>0.000110926</td></tr>
+<tr><td>spiral_L4_noise0</td><td>0</td><td>fa</td><td>0</td><td>0.0441942</td><td>0.0441942</td></tr>
+<tr><td>spiral_L4_noise0</td><td>0</td><td>proton_density</td><td>0.0692679</td><td>0.0795421</td><td>0.0773878</td></tr>
+<tr><td>spiral_L16_noise0</td><td>0</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0</td><td>0</td><td>t2_ms</td><td>4.33013</td><td>5.44862</td><td>5.15388</td></tr>
+<tr><td>spiral_L16_noise0</td><td>0</td><td>md_mm2_per_s</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0</td><td>0</td><td>fa</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0</td><td>0</td><td>proton_density</td><td>0.062024</td><td>0.0605157</td><td>0.0603133</td></tr>
+<tr><td>cartesian_L1_noise0.001</td><td>0.001</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0.001</td><td>0.001</td><td>t2_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0.001</td><td>0.001</td><td>md_mm2_per_s</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0.001</td><td>0.001</td><td>fa</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cartesian_L1_noise0.001</td><td>0.001</td><td>proton_density</td><td>0.00166092</td><td>0.00141933</td><td>0.00127029</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>0.001</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>0.001</td><td>t2_ms</td><td>13.2877</td><td>14.0312</td><td>14.2522</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>0.001</td><td>md_mm2_per_s</td><td>0.000120059</td><td>0.00015799</td><td>0.00015</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>0.001</td><td>fa</td><td>0.14987</td><td>0.263317</td><td>0.255792</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>0.001</td><td>proton_density</td><td>0.1308</td><td>0.188167</td><td>0.182307</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>0.001</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>0.001</td><td>t2_ms</td><td>5.44862</td><td>11.726</td><td>10.68</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>0.001</td><td>md_mm2_per_s</td><td>2.65165e-05</td><td>0.000124373</td><td>0.000107711</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>0.001</td><td>fa</td><td>0</td><td>0.0441942</td><td>0.0441942</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>0.001</td><td>proton_density</td><td>0.0691861</td><td>0.0789316</td><td>0.0773206</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>0.001</td><td>t1_ms</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>0.001</td><td>t2_ms</td><td>4.50694</td><td>5.3033</td><td>5.44862</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>0.001</td><td>md_mm2_per_s</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>0.001</td><td>fa</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>0.001</td><td>proton_density</td><td>0.0622492</td><td>0.0605678</td><td>0.0598419</td></tr>
+</table>
+<figure><img src="../11_final_comparison/parameter_rmse_vs_interleaves.png" alt="rmse"><figcaption>rmse</figcaption></figure>
+<h2>16. Discussion</h2>
+<p>spiral_L1_noise0: T1 tied, T2 worsened, MD worsened, FA worsened. spiral_L4_noise0: T1 tied, T2 worsened, MD worsened, FA worsened. spiral_L16_noise0: T1 tied, T2 worsened, MD tied, FA tied. spiral_L1_noise0.001: T1 tied, T2 worsened, MD worsened, FA worsened. spiral_L4_noise0.001: T1 tied, T2 worsened, MD worsened, FA worsened. spiral_L16_noise0.001: T1 tied, T2 worsened, MD tied, FA tied. The flip-only condition isolates the effect of adding the selected phase at fixed flip angles within this model. This does not establish a universal causal benefit of RF-phase optimization or transfer beyond the tested grid, tissues, sampling and reconstruction. A lower objective is not evidence of universally smaller map errors.</p>
+<p>At fixed optimized flip angles, the following table isolates addition of the selected phase. Native units are ms, ms, mm²/s and dimensionless FA.</p>
+<table>
+<tr><td>Condition</td><td>Parameter</td><td>Flip-only RMSE</td><td>Final RMSE</td></tr>
+<tr><td>spiral_L1_noise0</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L1_noise0</td><td>T2</td><td>13.9754</td><td>14.1421</td></tr>
+<tr><td>spiral_L1_noise0</td><td>MD</td><td>0.000161294</td><td>0.000145237</td></tr>
+<tr><td>spiral_L1_noise0</td><td>FA</td><td>0.263317</td><td>0.259582</td></tr>
+<tr><td>spiral_L4_noise0</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L4_noise0</td><td>T2</td><td>11.6592</td><td>10.8253</td></tr>
+<tr><td>spiral_L4_noise0</td><td>MD</td><td>0.000117094</td><td>0.000110926</td></tr>
+<tr><td>spiral_L4_noise0</td><td>FA</td><td>0.0441942</td><td>0.0441942</td></tr>
+<tr><td>spiral_L16_noise0</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0</td><td>T2</td><td>5.44862</td><td>5.15388</td></tr>
+<tr><td>spiral_L16_noise0</td><td>MD</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0</td><td>FA</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>T2</td><td>14.0312</td><td>14.2522</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>MD</td><td>0.00015799</td><td>0.00015</td></tr>
+<tr><td>spiral_L1_noise0.001</td><td>FA</td><td>0.263317</td><td>0.255792</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>T2</td><td>11.726</td><td>10.68</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>MD</td><td>0.000124373</td><td>0.000107711</td></tr>
+<tr><td>spiral_L4_noise0.001</td><td>FA</td><td>0.0441942</td><td>0.0441942</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>T1</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>T2</td><td>5.3033</td><td>5.44862</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>MD</td><td>0</td><td>0</td></tr>
+<tr><td>spiral_L16_noise0.001</td><td>FA</td><td>0</td><td>0</td></tr>
+</table>
+<h2>17. Limitations</h2>
+<p>The model retains nine documented strict expected failures: B01, D01, D02, M01, M02, M03, G01, I01, I02. Valid tensor maps do not fix tensor EPG attenuation. Wavevectors are not scanner-calibrated. The dictionary is coarse, on-grid and restricted to prolate tensors and two axes. The diagnostic holds orientation fixed; parameter correlations and discrete matching differ from its local noise model. SLSQP is local; phase searches are finite and projection can suppress alternating structure or smear reset gaps. Golden spiral sampling lacks intra-readout decay, coils, off-resonance and measured scanner timing. DCF-weighted adjoint is not an inverse. The external Heesterbeek analytical UEE disagreement remains: acquisition agreement is not agreement of its error predictor or general diffusion validation. No external source code was copied here; existing independently reimplemented/conceptually inspired acquisition methodology and GPL provenance are documented in docs/undersampling_validation.md.</p>
+<table>
+<tr><td>Component</td><td>Status</td><td>Evidence / limitation</td></tr>
+<tr><td>Initial sequence</td><td>PASS</td><td>Actual decoded train meets constraints; baseline saved before optimization.</td></tr>
+<tr><td>Flip-angle optimization</td><td>PASS</td><td>Optimization terminated successfully; local solution only.</td></tr>
+<tr><td>Phase candidate generation</td><td>PASS</td><td>Existing generators/projection; identical angle coefficients verified.</td></tr>
+<tr><td>Phase method comparison</td><td>PARTIAL</td><td>Predeclared objective and finite grid; no continuous/global family optimum claim.</td></tr>
+<tr><td>Final phase optimization</td><td>PARTIAL</td><td>Selected-family local grid refinement only; no free-form or joint refinement.</td></tr>
+<tr><td>EPG simulation</td><td>PARTIAL</td><td>Core tests pass; preserved G01 and tensor attenuation defects remain.</td></tr>
+<tr><td>Diffusion tensor handling</td><td>PARTIAL</td><td>PSD construction passes; D01/D02 signal attenuation defects remain.</td></tr>
+<tr><td>MD calculation</td><td>PASS</td><td>Physical trace(D)/3 used in phantom/fitting; legacy helper excluded.</td></tr>
+<tr><td>FA calculation</td><td>PASS</td><td>Eigenvalue invariant agrees with requested prolate tensor FA.</td></tr>
+<tr><td>CRLB evaluation</td><td>PARTIAL</td><td>Objective excludes MD/FA; physical-coordinate FD diagnostic is conditional on legacy physics.</td></tr>
+<tr><td>Phantom generation</td><td>PASS</td><td>On-grid two-compartment parameter/tensor checks passed.</td></tr>
+<tr><td>Reference reconstruction</td><td>PASS</td><td>All-atom, direct and noiseless Cartesian gates for all three sequences.</td></tr>
+<tr><td>Spiral trajectory</td><td>PARTIAL</td><td>Coordinate tests/cross-validation pass; scanner timing and gradient calibration untested.</td></tr>
+<tr><td>NUFFT acquisition</td><td>PASS</td><td>Validated operator reused; Cartesian complex-image gate passes.</td></tr>
+<tr><td>Undersampled reconstruction</td><td>PARTIAL</td><td>Weighted adjoint is not an inverse; aliasing and gain bias remain.</td></tr>
+<tr><td>T1 recovery</td><td>PARTIAL</td><td>Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification.</td></tr>
+<tr><td>T2 recovery</td><td>PARTIAL</td><td>Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification.</td></tr>
+<tr><td>MD recovery</td><td>PARTIAL</td><td>Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification.</td></tr>
+<tr><td>FA recovery</td><td>PARTIAL</td><td>Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification.</td></tr>
+<tr><td>End-to-end pipeline</td><td>PARTIAL</td><td>Workflow executed; computational consistency does not certify deficient diffusion physics.</td></tr>
+</table>
+<h2>18. Conclusion</h2>
+<p>The worked example completes the requested computational chain with an objective reduction of 18.50%, under the established conditional objective. Reference recovery is validated for the tested on-grid phantom. Undersampling conclusions are parameter- and condition-specific as reported above. Overall scientific certification remains PARTIAL; this run does not resolve the known diffusion model defects.</p></body></html>

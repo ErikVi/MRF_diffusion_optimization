@@ -1,0 +1,48 @@
+[
+  {
+    "parameter_order": [
+      "T1",
+      "T2",
+      "proton_density",
+      "MD",
+      "FA",
+      "object_phase_rad"
+    ],
+    "relative_sd": [
+      0.1899656838965068,
+      1.7185076737623763,
+      0.15682522175224642,
+      0.8280134078083888,
+      0.9154336539807215,
+      0.030720622297841827
+    ],
+    "rank": 6,
+    "scaled_condition": 5908.835399961867,
+    "derivative_step_convergence": 2.6726137984206735e-09,
+    "sigma_per_channel": 0.0223872113856834,
+    "scope": "Finite-difference diagnostic, fixed orientation, current legacy tensor signal; NOT certified physical CRLB and NOT optimized objective"
+  },
+  {
+    "parameter_order": [
+      "T1",
+      "T2",
+      "proton_density",
+      "MD",
+      "FA",
+      "object_phase_rad"
+    ],
+    "relative_sd": [
+      0.15838346065660602,
+      1.707439141567866,
+      0.13487226275937605,
+      0.46964488885452793,
+      0.32813718329509023,
+      0.03354249709933988
+    ],
+    "rank": 6,
+    "scaled_condition": 4132.4407377268835,
+    "derivative_step_convergence": 3.808022574385908e-09,
+    "sigma_per_channel": 0.0223872113856834,
+    "scope": "Finite-difference diagnostic, fixed orientation, current legacy tensor signal; NOT certified physical CRLB and NOT optimized objective"
+  }
+]

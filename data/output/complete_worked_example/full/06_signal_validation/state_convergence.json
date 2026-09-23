@@ -1,0 +1,23 @@
+{
+  "initial": {
+    "doubled_state_relative_errors": [
+      0.0,
+      0.0
+    ],
+    "unique_tissues": 2
+  },
+  "flip_only": {
+    "doubled_state_relative_errors": [
+      0.0,
+      0.0
+    ],
+    "unique_tissues": 2
+  },
+  "final": {
+    "doubled_state_relative_errors": [
+      0.0,
+      0.0
+    ],
+    "unique_tissues": 2
+  }
+}

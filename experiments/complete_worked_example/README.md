@@ -71,7 +71,10 @@ Open **`report/REPORT.html`** or **`report/REPORT.md`** for the complete illustr
 story. `report/figures.json` indexes all figures. Each figure lives beside its
 stage's data. `summary.csv` records the sequence progression and phase candidates;
 `reconstruction_metrics.csv` records all map errors globally and per compartment.
-Results are git-ignored: archive/share the whole run directory separately.
+The completed `full` run is intentionally committed, including all figures and
+arrays. [Read its illustrated report on GitHub](../../data/output/complete_worked_example/full/report/REPORT.md).
+Other runs, including smoke and future repeats, remain git-ignored. Clone or
+download the full directory to view its HTML report with relative image links.
 
 Dependencies are the existing NumPy/SciPy/JAX/SigPy/Matplotlib stack. No external
 trajectory binary, external EPG implementation or documentation framework is needed.

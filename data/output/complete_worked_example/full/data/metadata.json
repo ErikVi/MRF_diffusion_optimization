@@ -1,0 +1,22 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "backend": "cpu",
+  "devices": [
+    "cpu:0"
+  ],
+  "jax_x64": true,
+  "versions": {
+    "jax": "0.11.1",
+    "jaxlib": "0.11.1",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sigpy": "0.1.27",
+    "matplotlib": "3.11.1"
+  },
+  "git_commit": "1098950998b1b15d6abb39331fa3d06431aad8cb",
+  "git_status": " M experiments/end_to_end_validation/information_diagnostic.py\n?? experiments/complete_worked_example/\n?? src/mrf_diffusion/information/tensor_diagnostic.py\n?? src/mrf_diffusion/optimization/phase_search.py\n?? tests/test_phase_search.py\n",
+  "config_sha256": "688f5e78c87961661b0bcdfc8b103973285231d1060dda29ca216f5e1b6641f3",
+  "runtime_seconds_before_report": 499.71116760000587,
+  "runtime_seconds": 544.2569320999319
+}

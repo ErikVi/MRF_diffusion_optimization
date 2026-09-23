@@ -27,7 +27,7 @@ below and `docs/validation.md` for full detail.
 | `docs/` | Project documentation: physical model, validation status, architecture, conventions, units, and the thesis PDF |
 | `tests/` | Analytical, finite-difference, regression, and architecture checks |
 | `tools/` | Utility scripts, including capture of new validation reference snapshots |
-| `data/` | Input requirements (`data/input/README.md`) and generated output (`data/output/`, not tracked by git) |
+| `data/` | Input requirements and generated outputs; the completed `complete_worked_example/full` run is versioned, other runs are ignored |
 
 ## Install and test
 
@@ -128,6 +128,9 @@ python experiments/complete_worked_example/run_experiment.py --config experiment
 ```
 
 Browse `data/output/complete_worked_example/full/report/REPORT.html` (or `REPORT.md`).
+The report, figures and arrays from this completed run are included in Git:
+[read the illustrated report](data/output/complete_worked_example/full/report/REPORT.md)
+or [browse all saved results](data/output/complete_worked_example/full/).
 Figures and arrays are organized chronologically in numbered stage directories.
 `summary.csv` gives the sequence/phase progression; `reconstruction_metrics.csv`
 gives parameter-specific global and compartment errors. The finite phase search

@@ -1,0 +1,102 @@
+[
+  {
+    "component": "Initial sequence",
+    "status": "PASS",
+    "reason": "Actual decoded train meets constraints; baseline saved before optimization."
+  },
+  {
+    "component": "Flip-angle optimization",
+    "status": "PASS",
+    "reason": "Optimization terminated successfully; local solution only."
+  },
+  {
+    "component": "Phase candidate generation",
+    "status": "PASS",
+    "reason": "Existing generators/projection; identical angle coefficients verified."
+  },
+  {
+    "component": "Phase method comparison",
+    "status": "PARTIAL",
+    "reason": "Predeclared objective and finite grid; no continuous/global family optimum claim."
+  },
+  {
+    "component": "Final phase optimization",
+    "status": "PARTIAL",
+    "reason": "Selected-family local grid refinement only; no free-form or joint refinement."
+  },
+  {
+    "component": "EPG simulation",
+    "status": "PARTIAL",
+    "reason": "Core tests pass; preserved G01 and tensor attenuation defects remain."
+  },
+  {
+    "component": "Diffusion tensor handling",
+    "status": "PARTIAL",
+    "reason": "PSD construction passes; D01/D02 signal attenuation defects remain."
+  },
+  {
+    "component": "MD calculation",
+    "status": "PASS",
+    "reason": "Physical trace(D)/3 used in phantom/fitting; legacy helper excluded."
+  },
+  {
+    "component": "FA calculation",
+    "status": "PASS",
+    "reason": "Eigenvalue invariant agrees with requested prolate tensor FA."
+  },
+  {
+    "component": "CRLB evaluation",
+    "status": "PARTIAL",
+    "reason": "Objective excludes MD/FA; physical-coordinate FD diagnostic is conditional on legacy physics."
+  },
+  {
+    "component": "Phantom generation",
+    "status": "PASS",
+    "reason": "On-grid two-compartment parameter/tensor checks passed."
+  },
+  {
+    "component": "Reference reconstruction",
+    "status": "PASS",
+    "reason": "All-atom, direct and noiseless Cartesian gates for all three sequences."
+  },
+  {
+    "component": "Spiral trajectory",
+    "status": "PARTIAL",
+    "reason": "Coordinate tests/cross-validation pass; scanner timing and gradient calibration untested."
+  },
+  {
+    "component": "NUFFT acquisition",
+    "status": "PASS",
+    "reason": "Validated operator reused; Cartesian complex-image gate passes."
+  },
+  {
+    "component": "Undersampled reconstruction",
+    "status": "PARTIAL",
+    "reason": "Weighted adjoint is not an inverse; aliasing and gain bias remain."
+  },
+  {
+    "component": "T1 recovery",
+    "status": "PARTIAL",
+    "reason": "Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification."
+  },
+  {
+    "component": "T2 recovery",
+    "status": "PARTIAL",
+    "reason": "Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification."
+  },
+  {
+    "component": "MD recovery",
+    "status": "PARTIAL",
+    "reason": "Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification."
+  },
+  {
+    "component": "FA recovery",
+    "status": "PARTIAL",
+    "reason": "Exact on-grid reference recovery; restricted grid, undersampling errors and no off-grid certification."
+  },
+  {
+    "component": "End-to-end pipeline",
+    "status": "PARTIAL",
+    "reason": "Workflow executed; computational consistency does not certify deficient diffusion physics."
+  }
+]

@@ -1,0 +1,242 @@
+{
+  "audit_completed": true,
+  "tests": {
+    "passed": 178,
+    "failures": 0,
+    "skipped_or_expected_failures": 9,
+    "source": "C:\\Users\\visna\\Documents\\Codex\\2026-09-09\\are\\work\\MRF_diffusion_optimization\\data\\output\\complete_worked_example\\test_suite.xml"
+  },
+  "run": "full",
+  "verification": "PASS",
+  "results_directory": "C:\\Users\\visna\\Documents\\Codex\\2026-09-09\\are\\work\\MRF_diffusion_optimization\\data\\output\\complete_worked_example\\full",
+  "report": "C:\\Users\\visna\\Documents\\Codex\\2026-09-09\\are\\work\\MRF_diffusion_optimization\\data\\output\\complete_worked_example\\full\\report\\REPORT.html",
+  "figures": 27,
+  "optimization_converged": true,
+  "initial_objective": 1.298615903796416,
+  "flip_only_objective": 1.1296051849262718,
+  "selected_phase_method": "sinusoidal",
+  "final_objective": 1.0583866162027582,
+  "objective_improvement_percent": 18.498871520929605,
+  "initial_final_relative_sd_diagnostic": {
+    "T1": [
+      0.23965430073859173,
+      0.2262261225513383
+    ],
+    "T2": [
+      2.6831611832095508,
+      1.5991055855070486
+    ],
+    "MD": [
+      1.2364059452659613,
+      0.9214929507186439
+    ],
+    "FA": [
+      1.303518969660217,
+      0.9825963104823421
+    ]
+  },
+  "initial_final_conditional_objective_bounds": {
+    "T1": [
+      0.4489546821011198,
+      0.396688431156593
+    ],
+    "T2": [
+      0.36488057658730066,
+      0.24501168047269545
+    ],
+    "internal_M": [
+      0.4847806451079956,
+      0.4166865045734698
+    ]
+  },
+  "initial_final_rmse": [
+    {
+      "condition": "cartesian_L1_noise0",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        0.0,
+        0.0
+      ],
+      "md_mm2_per_s": [
+        0.0,
+        0.0
+      ],
+      "fa": [
+        0.0,
+        0.0
+      ],
+      "proton_density": [
+        1.1604175789713258e-05,
+        1.1604175789722616e-05
+      ]
+    },
+    {
+      "condition": "spiral_L1_noise0",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        13.57847561400027,
+        14.142135623730951
+      ],
+      "md_mm2_per_s": [
+        0.00012005857945186592,
+        0.00014523687548277815
+      ],
+      "fa": [
+        0.14657549249448218,
+        0.25958199571618984
+      ],
+      "proton_density": [
+        0.13114380909770212,
+        0.18111965734388155
+      ]
+    },
+    {
+      "condition": "spiral_L4_noise0",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        5.7282196186948,
+        10.825317547305483
+      ],
+      "md_mm2_per_s": [
+        3.247595264191645e-05,
+        0.0001109264959331178
+      ],
+      "fa": [
+        0.0,
+        0.04419417382415922
+      ],
+      "proton_density": [
+        0.06926792738353066,
+        0.07738780448067752
+      ]
+    },
+    {
+      "condition": "spiral_L16_noise0",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        4.330127018922194,
+        5.153882032022076
+      ],
+      "md_mm2_per_s": [
+        0.0,
+        0.0
+      ],
+      "fa": [
+        0.0,
+        0.0
+      ],
+      "proton_density": [
+        0.06202404566816589,
+        0.06031327248927244
+      ]
+    },
+    {
+      "condition": "cartesian_L1_noise0.001",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        0.0,
+        0.0
+      ],
+      "md_mm2_per_s": [
+        0.0,
+        0.0
+      ],
+      "fa": [
+        0.0,
+        0.0
+      ],
+      "proton_density": [
+        0.0016609217385913624,
+        0.0012702943784523935
+      ]
+    },
+    {
+      "condition": "spiral_L1_noise0.001",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        13.287682265918312,
+        14.252192813739224
+      ],
+      "md_mm2_per_s": [
+        0.00012005857945186592,
+        0.00015000000000000001
+      ],
+      "fa": [
+        0.14986973510352247,
+        0.2557922741210141
+      ],
+      "proton_density": [
+        0.13079985555723772,
+        0.18230663617533546
+      ]
+    },
+    {
+      "condition": "spiral_L4_noise0.001",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        5.448623679425842,
+        10.680004681646913
+      ],
+      "md_mm2_per_s": [
+        2.6516504294495534e-05,
+        0.00010771054962258804
+      ],
+      "fa": [
+        0.0,
+        0.04419417382415922
+      ],
+      "proton_density": [
+        0.06918611554370613,
+        0.07732055312709127
+      ]
+    },
+    {
+      "condition": "spiral_L16_noise0.001",
+      "t1_ms": [
+        0.0,
+        0.0
+      ],
+      "t2_ms": [
+        4.5069390943299865,
+        5.448623679425842
+      ],
+      "md_mm2_per_s": [
+        0.0,
+        0.0
+      ],
+      "fa": [
+        0.0,
+        0.0
+      ],
+      "proton_density": [
+        0.06224920402263742,
+        0.059841939294797204
+      ]
+    }
+  ],
+  "largest_derivative_step_error": 4.177325790598319e-09,
+  "maximum_paired_noise_difference": 3.1401849173675503e-16,
+  "scientific_certification": "PARTIAL",
+  "unresolved": "Nine known scientific discrepancies; conditional objective omits MD/FA; finite phase grid/projection; on-grid restricted phantom; uncalibrated gradients; adjoint aliasing; analytical UEE disagreement."
+}

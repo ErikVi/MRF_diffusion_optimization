@@ -1,0 +1,618 @@
+{
+  "experiment": {
+    "test_report": "../../data/output/complete_worked_example/test_suite.xml",
+    "run_name": "full",
+    "output_directory": "../../data/output/complete_worked_example",
+    "length": 40,
+    "state_count": 48,
+    "knot_setting": 10,
+    "initial_minimum_rad": 0.25,
+    "initial_excursion_rad": 0.15,
+    "parameter_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tissue_weights": [
+      0.5,
+      0.5
+    ],
+    "interleaf_counts": [
+      1,
+      4,
+      16
+    ],
+    "noise_levels": [
+      0.0,
+      0.001
+    ],
+    "noise_seed": 2026,
+    "phase_search": {
+      "families": [
+        "none",
+        "quadratic",
+        "linear",
+        "sinusoidal",
+        "alternating"
+      ],
+      "minimum": 0.01,
+      "maximum": 1.0,
+      "coarse_count": 33,
+      "refinement_count": 129
+    },
+    "imaging": {
+      "phantom": {
+        "image_shape": [
+          16,
+          16
+        ],
+        "tile_shape": [
+          4,
+          4
+        ],
+        "t1_ms": [
+          750.0,
+          1250.0
+        ],
+        "t2_ms": [
+          70.0,
+          90.0
+        ],
+        "proton_density": [
+          1.0,
+          0.9
+        ],
+        "geometry": "checkerboard"
+      },
+      "diffusion": {
+        "mean_diffusivity_mm2_per_s": [
+          0.0007,
+          0.001
+        ],
+        "fractional_anisotropy": [
+          0.2,
+          0.7
+        ],
+        "principal_directions_xyz": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      "dictionary": {
+        "t1_ms": [
+          750.0,
+          1250.0
+        ],
+        "t2_ms": [
+          70.0,
+          90.0
+        ],
+        "mean_diffusivity_mm2_per_s": [
+          0.0007,
+          0.001
+        ],
+        "fractional_anisotropy": [
+          0.2,
+          0.7
+        ],
+        "principal_directions_xyz": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        "max_entries": 10000,
+        "max_working_bytes": 268435456,
+        "voxel_batch_size": 256
+      },
+      "trajectory": {
+        "design_matrix_size": 16,
+        "acceleration": 4.0,
+        "kind": "generated_spiral",
+        "schedule": "golden",
+        "initial_angle_rad": 0.0,
+        "field_of_view_m": 0.24,
+        "frequency_sampling_factor": 1.0,
+        "density_exponent": 6.0,
+        "max_gradient_t_per_m": 0.03,
+        "max_slew_t_per_m_per_s": 150.0,
+        "oversampling": 2.0,
+        "kernel_width": 6.0
+      },
+      "comparison": {
+        "density_compensation": "radial_increment",
+        "unit_impulse_gain": true,
+        "reference_image_relative_tolerance": 0.0001,
+        "reference_density_relative_tolerance": 0.0001,
+        "ambiguity_tolerance": 1e-10
+      },
+      "object_phase": {
+        "enabled": true,
+        "edge_phase_rad": 0.6283185307179586
+      }
+    },
+    "optimizer": {
+      "aggregation": "L1",
+      "initial_phase_method": "quadratic",
+      "sequence": {
+        "echo_time_ms": 4.0,
+        "repetition_time_ms": 15.0,
+        "order_step": 1,
+        "tensor_preparation_wavevector": 300.0,
+        "tensor_readout_wavevector": 100.0
+      },
+      "constraints": {
+        "minimum_flip_angle": 0.17453292519943295,
+        "maximum_flip_angle": 1.0471975511965976,
+        "maximum_angle_step": 0.02,
+        "coefficient_minimum": -1000.0,
+        "coefficient_maximum": 1000.0
+      },
+      "solver": {
+        "max_iterations": 100,
+        "method": "SLSQP",
+        "minimum_callback_iterations": 1000,
+        "callback_change_tolerance": 0.01
+      }
+    }
+  },
+  "imaging": {
+    "input_directory": "data/input",
+    "output_directory": "data/output/quantitative_undersampling",
+    "phantom": {
+      "image_shape": [
+        16,
+        16
+      ],
+      "tile_shape": [
+        4,
+        4
+      ],
+      "geometry": "checkerboard",
+      "radius_pixels": null,
+      "t1_ms": [
+        750.0,
+        1250.0
+      ],
+      "t2_ms": [
+        70.0,
+        90.0
+      ],
+      "proton_density": [
+        1.0,
+        0.9
+      ]
+    },
+    "diffusion": {
+      "mean_diffusivity_mm2_per_s": [
+        0.0007,
+        0.001
+      ],
+      "fractional_anisotropy": [
+        0.2,
+        0.7
+      ],
+      "principal_directions_xyz": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ]
+    },
+    "sequence": {
+      "flip_angles_rad": [
+        0.2,
+        0.3,
+        0.4,
+        0.25,
+        0.5,
+        0.35,
+        0.2,
+        0.45
+      ],
+      "rf_phase_mode": "reference",
+      "rf_phases_rad": [],
+      "reference_method": "quadratic",
+      "reference_fraction": 0.18,
+      "optimized_archive": "",
+      "physics": {
+        "echo_time_ms": 4.0,
+        "repetition_time_ms": 15.0,
+        "order_step": 1,
+        "scalar_preparation_wavevector": 612,
+        "scalar_readout_wavevector": 50,
+        "tensor_preparation_wavevector": 300.0,
+        "tensor_readout_wavevector": 100.0,
+        "preparation_angles": [
+          1.5707963267948966,
+          3.141592653589793,
+          -1.5707963267948966
+        ],
+        "preparation_rf_phase": 0,
+        "inversion_angle": 3.141592653589793,
+        "inversion_rf_phase": 0,
+        "reuse_readout_train_for_inversion": true,
+        "directions": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          [
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "initial_longitudinal_magnetization": 1.0,
+        "scalar_state_count": 150
+      }
+    },
+    "simulation": {
+      "direction_count": 3,
+      "state_count": 48,
+      "include_inversion": false,
+      "sampling": false,
+      "sampling_offset": 0,
+      "sampling_rate": 32
+    },
+    "trajectory": {
+      "kind": "generated_spiral",
+      "supplied_archive": "",
+      "layout": "components_first",
+      "component_order": "xy",
+      "schedule": "golden",
+      "interleaves_per_frame": 1,
+      "angular_increment_rad": 0.19634954084936207,
+      "initial_angle_rad": 0.0,
+      "reference_arm_count": 32,
+      "field_of_view_m": 0.24,
+      "design_matrix_size": 16,
+      "frequency_sampling_factor": 1.0,
+      "acceleration": 4.0,
+      "density_exponent": 6.0,
+      "max_gradient_t_per_m": 0.03,
+      "max_slew_t_per_m_per_s": 150.0,
+      "oversampling": 2.0,
+      "kernel_width": 6.0
+    },
+    "object_phase": {
+      "enabled": true,
+      "edge_phase_rad": 0.6283185307179586
+    },
+    "noise": {
+      "enabled": false,
+      "standard_deviation_per_channel": 0.001,
+      "seed": 2026
+    },
+    "density_compensation": {
+      "method": "none",
+      "pipe_menon_iterations": 30
+    },
+    "reconstruction": {
+      "enabled": true,
+      "representative_frames": [
+        0,
+        3,
+        7
+      ]
+    },
+    "dictionary": {
+      "t1_ms": [
+        750.0,
+        1250.0
+      ],
+      "t2_ms": [
+        70.0,
+        90.0
+      ],
+      "mean_diffusivity_mm2_per_s": [
+        0.0007,
+        0.001
+      ],
+      "fractional_anisotropy": [
+        0.2,
+        0.7
+      ],
+      "principal_directions_xyz": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ]
+      ],
+      "max_entries": 10000,
+      "max_working_bytes": 268435456,
+      "voxel_batch_size": 256
+    },
+    "comparison": {
+      "flip_optimized_config": "",
+      "joint_optimized_config": "",
+      "interleaf_counts": [
+        1,
+        4,
+        16
+      ],
+      "noise_std_per_channel": [
+        0.0,
+        0.001
+      ],
+      "noise_seeds": [
+        2026
+      ],
+      "density_compensation": "radial_increment",
+      "unit_impulse_gain": true,
+      "reference_image_relative_tolerance": 0.0001,
+      "reference_density_relative_tolerance": 0.0001,
+      "ambiguity_tolerance": 1e-10
+    }
+  },
+  "optimization": {
+    "input_directory": "data/input",
+    "output_directory": "data/output",
+    "initial_angle_file": "fa_array_initial.npy",
+    "preparation_angle_file": "DIFFPREPARATION/fa_train_diffprep.npy",
+    "preparation_phase_file": "DIFFPREPARATION/pm_train_diffprep.npy",
+    "length": 40,
+    "knot_setting": 10,
+    "degree": 3,
+    "phase_methods": [
+      "free form",
+      "no phase modulation",
+      "quadratic",
+      "quadratic malleable"
+    ],
+    "aggregation": "L1",
+    "initial_phase_fraction": 0.18,
+    "initial_phase_method": "quadratic",
+    "piecewise_parameters": [
+      0.3,
+      0.04,
+      -0.03
+    ],
+    "phase_scan_count": 400,
+    "phase_scan_minimum": 0.01,
+    "phase_scan_maximum": 1.0,
+    "benchmark_repetitions": 10000,
+    "plot_diffusion_minimum": 0.0005,
+    "plot_diffusion_maximum": 0.001,
+    "plot_diffusion_samples": 1000,
+    "plot_tissue": [
+      1500.0,
+      90.0,
+      0.9
+    ],
+    "plot_tensor_template": [
+      [
+        1.8,
+        0.1,
+        0.1
+      ],
+      [
+        0.1,
+        1.0,
+        0.1
+      ],
+      [
+        0.1,
+        0.1,
+        0.2
+      ]
+    ],
+    "sequence": {
+      "echo_time_ms": 4.0,
+      "repetition_time_ms": 15.0,
+      "order_step": 1,
+      "scalar_preparation_wavevector": 612,
+      "scalar_readout_wavevector": 50,
+      "tensor_preparation_wavevector": 300.0,
+      "tensor_readout_wavevector": 100.0,
+      "preparation_angles": [
+        1.5707963267948966,
+        3.141592653589793,
+        -1.5707963267948966
+      ],
+      "preparation_rf_phase": 0,
+      "inversion_angle": 3.141592653589793,
+      "inversion_rf_phase": 0,
+      "reuse_readout_train_for_inversion": true,
+      "directions": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "initial_longitudinal_magnetization": 1.0,
+      "scalar_state_count": 150
+    },
+    "simulation": {
+      "direction_count": 3,
+      "state_count": 48,
+      "include_inversion": false,
+      "sampling": false,
+      "sampling_offset": 0,
+      "sampling_rate": 32
+    },
+    "tissues": {
+      "scalar_parameters": [
+        [
+          750.0,
+          70.0,
+          1.0
+        ],
+        [
+          1250.0,
+          90.0,
+          1.0
+        ]
+      ],
+      "diffusion_tensors": [
+        [
+          [
+            0.0008638576060745828,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0006180711969627086,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0006180711969627086
+          ]
+        ],
+        [
+          [
+            0.0005074817186887957,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0019850365626224086,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0005074817186887957
+          ]
+        ]
+      ],
+      "parameter_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tissue_weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "constraints": {
+      "minimum_flip_angle": 0.17453292519943295,
+      "maximum_flip_angle": 1.0471975511965976,
+      "maximum_angle_step": 0.02,
+      "coefficient_minimum": -1000.0,
+      "coefficient_maximum": 1000.0,
+      "minimum_split_fraction": 0.2,
+      "maximum_split_fraction": 0.8,
+      "minimum_positive_curvature": 0.01,
+      "maximum_negative_curvature": -0.01
+    },
+    "solver": {
+      "method": "SLSQP",
+      "max_iterations": 100,
+      "callback_change_tolerance": 0.01,
+      "minimum_callback_iterations": 1000
+    }
+  }
+}

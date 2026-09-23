@@ -1,0 +1,8 @@
+{
+  "family": "sinusoidal",
+  "fraction": 0.7834375,
+  "objective": 1.0586691607419358,
+  "status": "finite",
+  "runtime_seconds": 1.0421989999013022,
+  "projection_rmse_rad": 1.0657871877953173
+}

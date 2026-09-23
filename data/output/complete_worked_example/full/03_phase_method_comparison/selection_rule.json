@@ -1,0 +1,26 @@
+{
+  "criterion": "minimum unchanged weighted L1 T1/T2/internal-M objective",
+  "tie_rule": "first configured family/fraction",
+  "phase_representation": "historical generator projected into existing cubic spline",
+  "fixed_flip_coefficients": [
+    0.39675583087642075,
+    0.33343230473215774,
+    0.17012364709708386,
+    0.365237407674683,
+    0.2447445114505255,
+    0.45078428113965097,
+    0.4819611253370419
+  ],
+  "selection_precedes_phantom": true,
+  "families": [
+    "none",
+    "quadratic",
+    "linear",
+    "sinusoidal",
+    "alternating"
+  ],
+  "fraction_minimum": 0.01,
+  "fraction_maximum": 1.0,
+  "coarse_count": 33,
+  "refinement_count": 129
+}

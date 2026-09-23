@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "message": "Optimization terminated successfully",
+  "iterations": 9,
+  "evaluations": 10,
+  "gradient_evaluations": 9,
+  "runtime_seconds": 96.32276200002525,
+  "initial_objective": 1.298615903796416,
+  "final_objective": 1.1296051849262718,
+  "minimum_constraint": -9.059603761629731e-12,
+  "history": [
+    {
+      "iteration": 1,
+      "objective": 1.315096123927039
+    },
+    {
+      "iteration": 2,
+      "objective": 1.1325622998942386
+    },
+    {
+      "iteration": 3,
+      "objective": 1.130950269058276
+    },
+    {
+      "iteration": 4,
+      "objective": 1.129919745102177
+    },
+    {
+      "iteration": 5,
+      "objective": 1.1298574677131314
+    },
+    {
+      "iteration": 6,
+      "objective": 1.1296868590522302
+    },
+    {
+      "iteration": 7,
+      "objective": 1.1296116664557756
+    },
+    {
+      "iteration": 8,
+      "objective": 1.1296051849262718
+    },
+    {
+      "iteration": 9,
+      "objective": 1.1296051849262718
+    }
+  ],
+  "optimizer": {
+    "method": "SLSQP",
+    "max_iterations": 100,
+    "callback_change_tolerance": 0.01,
+    "minimum_callback_iterations": 1000
+  },
+  "constraints": {
+    "minimum_flip_angle": 0.17453292519943295,
+    "maximum_flip_angle": 1.0471975511965976,
+    "maximum_angle_step": 0.02,
+    "coefficient_minimum": -1000.0,
+    "coefficient_maximum": 1000.0,
+    "minimum_split_fraction": 0.2,
+    "maximum_split_fraction": 0.8,
+    "minimum_positive_curvature": 0.01,
+    "maximum_negative_curvature": -0.01
+  },
+  "scipy_default_ftol": 1e-06
+}
