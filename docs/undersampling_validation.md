@@ -295,6 +295,12 @@ downloading reference source or data.
 
 ## Remaining uncertainties and validation boundary
 
+The subsequent `experiments/complete_worked_example/` adds a reproducible sequential
+flip-angle/phase-family experiment and sequence-specific Cartesian/phantom gates.
+Its evidence is reported separately from this external common-case comparison.
+It reuses the validated acquisition operator without changing external comparisons
+or claiming that execution resolves D01/D02 or the analytical UEE disagreement.
+
 No new bug in our acquisition implementation was identified in these common
 cases. This finding does not cover anisotropic diffusion, FA estimation,
 nonzero optimized RF phase trains, coils, noise cross-validation, general

@@ -1,5 +1,26 @@
 # Scientific validation foundation
 
+## Sequential worked-example foundation (2026-09-23)
+
+Complete suite before execution: **178 passed, 9 expected failures, 0 unexpected
+failures**, 233.09 seconds. Seven new phase-search cases verify unchanged angle
+coefficients, exact equivalence to existing generators/projection, finite minimum
+selection, deterministic ties and invalid-input rejection. The original physical
+information diagnostic test passes through its retained adapter after extracting
+the reusable calculation. No physics reference was recaptured or tolerance changed.
+
+`experiments/complete_worked_example/` is a new sequential workflow, with separate
+smoke/full outputs. It records baseline information before optimization and locks
+phase-family selection before phantom outcomes. Reference recovery and doubled
+state tests run on each actual new sequence. See its report for execution results
+and component certification. The nine defects below remain unresolved.
+
+Both runs now completed. The [executed sequential example](complete_worked_example.md)
+records 18.50% objective improvement, successful reference gates, identical
+doubled-state endpoint signals and paired-noise checks, but no overall improvement
+over initialization in the tested quantitative undersampling errors. Saved-output
+verification also passed. Certification remains PARTIAL.
+
 ## Executed end-to-end validation
 
 Final complete suite: **171 passed, 9 expected failures, 0 unexpected failures**,

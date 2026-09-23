@@ -1,12 +1,32 @@
 # Architecture and migration
 
+## Sequential worked example
+
+`experiments/complete_worked_example/` orchestrates the existing components with
+a pre-phantom phase selection gate. `run_experiment.py` handles initialization,
+optimization and information; `spatial_validation.py` assembles existing forward,
+reconstruction and fitting functions; `analysis.py` regenerates PNG/SVG and
+Markdown/HTML reports from saved arrays; `output.py` records source/test provenance.
+The example's AUDIT.md was written before implementation.
+
+Reusable `optimization/phase_search.py` preserves angle coefficients while fitting
+existing generator phases and searching their fractions. It validates family
+names and coefficient dimensions, records every evaluation, and deterministically
+selects finite minima. It does not introduce a new objective or repair the legacy
+phase-comparison runner's malformed baseline.
+
+`information/tensor_diagnostic.py` contains the previously tested converged
+finite-difference diagnostic, with explicit tissue/scaling inputs and raw
+covariance/variance outputs. The old experiment adapter remains compatible and
+its original test remains unchanged. No EPG or tensor attenuation code moved.
+
 ## End-to-end experiment orchestration
 
 `experiments/end_to_end_validation/run_experiment.py` composes the established
 optimization, sequence, phantom, simulation, acquisition and reconstruction APIs.
-It adds no MRI equations. `information_diagnostic.py` performs converged finite
-differences through the authoritative simulator on the existing prolate tensor
-family; this is experiment-specific evaluation, not a replacement objective.
+It adds no MRI equations. `information_diagnostic.py` now adapts the shared
+`information.tensor_diagnostic` calculation to the original experiment's tissue
+and file-output contract; this remains a diagnostic, not a replacement objective.
 `analysis.py` creates common-scale figures and reports; `replot.py` regenerates
 them from saved data without recomputation. All package physics remains unchanged.
 The run stores configuration/source provenance, sequences, optimization, signals,

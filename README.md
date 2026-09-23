@@ -4,6 +4,7 @@ Research code for the MSc thesis "On the robust optimization of diffusion-enhanc
 MRF sequences through flip angle and phase train design with comparative phase
 modulation strategies" (Erik Višnar, TU Delft).
 
+
 The package implements Extended Phase Graph (EPG) simulation, diffusion tensor
 modelling, B-spline sequence parameterization, JAX-based Fisher information
 analysis, and constrained sequence optimization for Magnetic Resonance
@@ -40,7 +41,7 @@ python -m pip install -e .
 python -m pytest -q
 ```
 
-Expect **171 passed, 9 expected failures**. The nine expected failures are the
+Expect **178 passed, 9 expected failures**. The nine expected failures are the
 documented scientific discrepancies below; an unexpected pass fails the suite
 and must be investigated, not ignored.
 
@@ -112,6 +113,29 @@ external `UEEphase_DH` module). Without them, the original thesis experiments
 cannot be reproduced from this checkout; see `data/input/README.md`. No
 synthetic substitutes are ever presented as a reproduction of thesis results.
 
+## Complete sequential worked example
+
+[`experiments/complete_worked_example/`](experiments/complete_worked_example/README.md)
+shows initialization → flip-angle-only optimization → phase-family comparison and
+selection → final phase refinement → information → phantom → undersampling → maps.
+The [fresh audit](experiments/complete_worked_example/AUDIT.md) records the actual
+supported methods and scientific limitations before implementation.
+
+```sh
+python -m pytest -q --junitxml=data/output/complete_worked_example/test_suite.xml
+python experiments/complete_worked_example/run_experiment.py --config experiments/complete_worked_example/smoke.toml
+python experiments/complete_worked_example/run_experiment.py --config experiments/complete_worked_example/full.toml
+```
+
+Browse `data/output/complete_worked_example/full/report/REPORT.html` (or `REPORT.md`).
+Figures and arrays are organized chronologically in numbered stage directories.
+`summary.csv` gives the sequence/phase progression; `reconstruction_metrics.csv`
+gives parameter-specific global and compartment errors. The finite phase search
+uses the existing conditional T1/T2/internal-M objective, not a new MD/FA objective.
+This is distinct from the earlier joint-optimization experiment below.
+The [executed results](docs/complete_worked_example.md) document lower objective
+but no general undersampling improvement over the initial sequence.
+
 ## The end-to-end experiment
 
 `experiments/end_to_end_validation/` is a single executable pipeline connecting
@@ -180,6 +204,7 @@ in `docs/validation.md`.
 | `docs/quantitative_undersampling.md` | Tensor-dictionary fitting and controlled undersampling comparisons |
 | `docs/undersampling_validation.md` | Cross-validation against an external reference implementation |
 | `docs/end_to_end_validation.md` | Results of the executed full pipeline run |
+| `docs/complete_worked_example.md` | Sequential flip-angle/phase selection example and measured results |
 | `docs/thesis.pdf` | The MSc thesis itself |
 
 ## Design principle
